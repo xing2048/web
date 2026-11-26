@@ -1,0 +1,189 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>HTML5圆点不断衍生动画特效</title>
+
+<style>
+* {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background-color: #191321;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Fira Sans", "Helvetica Neue", sans-serif;
+  color: #fff;
+}
+
+h3 {
+  font-weight: 300;
+}
+
+button {
+  border: 0;
+  background: none;
+  color: #fff;
+}
+
+.control-group {
+  display: none;
+}
+
+.control-palette {
+  background-color: #0d0a11;
+  font-weight: 300;
+  position: absolute;
+  bottom: 0.25em;
+  left: 0.25em;
+  padding: 0.25em 0.5em;
+  border-radius: 7px;
+  border: 1px solid #0e0d0e;
+  border-bottom-width: 2px;
+}
+.control-palette--is-open .control-group {
+  display: block;
+}
+</style>
+
+</head>
+<body>
+<canvas id="pattern" width="600" height="600"></canvas>
+
+<!-- Interactive Sliders -->
+<div class="control-palette js-palette">
+	<div class="control-group js-controls">
+
+		<div class="control-group__item slider">
+			<h3>
+				发散度
+			</h3>
+			<input id="divergence-angle" type="range" name="divergence" min="97" max="147" value="137.5" step="0.5" class="slider__control">
+			<span id="divergence-angle-value" class="slider__value">137.5</span>	
+		</div>
+
+		<div class="control-group__item slider">
+			<h3>
+				密集度
+			</h3>
+			<input id="scale" type="range" name="scale" min="5" max="15" value="10" step="0.5" class="slider__control">
+			<span id="constant-value" class="slider__value">10</span>	
+		</div>
+
+	</div>
+	<button class="button js-toggle-controls">
+		三
+	</button>
+</div>
+
+<script>
+// Interactive Planar Phyllotaxis Demo
+// Inspired by The Coding Train's Coding Challenge #30
+// Formulas from http://algorithmicbotany.org/papers/abop/abop-ch4.pdf
+
+// Setup related variables
+const pattern = document.querySelector('#pattern');
+const ctx = pattern.getContext('2d');
+const fps = 60;       // Set the draw loop's framerate
+let hue = 0;          // Current Color
+
+// Formula related variables
+let c = 10;                 // Scaling constant. Bigger number, bigger gaps.
+let n = 0;                  // Iteration count
+let divergenceAngle = 137.5 // The angle each iteration diverges from the previous.
+// NOTE: 137.5 is the angle for a sunflower
+
+// Setup
+////////////////////////////////////////////////////
+
+// Fill the page
+pattern.width = window.innerWidth;
+pattern.height = window.innerHeight;
+
+// Define Draw Loop
+////////////////////////////////////////////////////
+
+function draw() {
+	
+	// These should probably be extracted out to a
+	// separate function. Not going to bother this demo.
+
+	const radius = c * Math.sqrt(n);   // Current radius of the spiral
+	const angle = n * divergenceAngle; // Offset angle
+	
+	// cos() and sin() expect radians, but our formula is in degrees
+	// We'll need to convert the degrees to radians 
+	const radAngle = angle * (Math.PI / 180);
+	
+	// Formulas for x and y from http://algorithmicbotany.org/papers/abop/abop-ch4.pdf
+	// Add half the canvas height and width to center the formation
+	const x = radius * Math.cos(radAngle) + pattern.width / 2;
+	const y = radius * Math.sin(radAngle) + pattern.height / 2;
+	
+	// Increment the color one step
+    hue++;
+	
+	// Reset the color once it gets to the end
+    if (hue >= 360) {
+	  hue = 0;
+    }	
+
+	// Draw this iteration's circle
+	ctx.beginPath();
+	ctx.arc(x, y, 6, 0, Math.PI * 2);
+	ctx.fillStyle = `hsl(${hue}, 100%, 50%)`;
+	ctx.fill();
+	
+	// Increment iteration count
+	n++;
+	
+}
+
+// Start Draw Loop
+////////////////////////////////////////////////////
+
+setInterval( function() {
+  draw();
+}, 1000/fps);
+
+
+
+// Controls (Ignore this, it's just for the sliders)
+////////////////////////////////////////////////////
+
+const inputs = document.querySelectorAll('.js-controls input');
+const divergenceDisplay = document.querySelector('#divergence-angle-value');
+const constantDisplay = document.querySelector('#constant-value');
+
+const toggleButton = document.querySelector('.js-toggle-controls');
+const palette = document.querySelector('.js-palette');
+
+function handleUpdate() {
+  
+	if (this.name === 'divergence') {
+		divergenceAngle = this.value;
+		divergenceDisplay.innerHTML = `${this.value}`;
+	} else if (this.name === 'scale') {
+		c = this.value;
+		constantDisplay.innerHTML = `${this.value}`;
+	}
+	
+	// Reset the demo so we have a fresh start with the new values
+	ctx.clearRect(0, 0, pattern.width, pattern.height);
+	n = 0;
+}
+
+function togglePalette() {
+	palette.classList.toggle( 'control-palette--is-open' );
+}
+
+inputs.forEach(input => input.addEventListener('change', handleUpdate));
+toggleButton.addEventListener('click', togglePalette);
+</script>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>适用浏览器：360、FireFox、Chrome、Opera、傲游、搜狗、世界之窗. 不支持Safari、IE8及以下浏览器。</p>
+</div>
+</body>
+</html>

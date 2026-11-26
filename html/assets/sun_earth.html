@@ -1,0 +1,510 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>太阳和地球</title>
+
+<style>
+body {
+  margin:0px;
+  height:100vh;
+ ?padding:0px;
+  overflow:hidden;
+background: radial-gradient(ellipse at center, rgba(15,20,25,1) 19%,rgba(10,7,15,1) 100%); 
+}
+
+#canvasContainer {
+position:absolute;
+z-index:-2;
+background: radial-gradient(ellipse at center, rgba(255,34,0,1) 0%, rgba(219,190,3,1) 67%, rgba(255,255,255,1) 70%, rgba(247,255,3,1) 100%);
+  margin-left:calc(50% - 100px);
+  margin-top:calc(50vh - 100px);
+  display:inline-block;
+  width:200px;
+  height:200px;
+border-radius:180px;
+box-sizing: border-box;
+border:0px solid white;
+box-shadow: 0px 0px 15px 5px rgba(255,233,145,1);
+}
+
+#mainstage {
+  opacity:1;
+  left:10%;
+  top:10%;
+  width:80%;
+  height:80%;
+  position:relative;
+  overflow:hidden;
+  margin:0px;
+  padding:0px;
+  background-color:transparent;
+  border-radius:180px;
+  animation: planetRotation 30s infinite;
+  animation-timing-function: linear;
+}
+ #filterContainer {
+  overflow:hidden;
+  position:relative;
+  width:130%;
+  height:130%;
+  left: -17%;
+  top: -17%;
+  filter:blur(4px) url(#svgFilter);
+}
+
+@keyframes planetRotation {
+  0%   {transform:rotate(0deg);}
+  50%  {transform:rotate(180deg);}
+  100% {transform:rotate(360deg);}
+}
+
+@keyframes starShine {
+  0%   {opacity:0.5}
+  25%  {opacity:0.2}
+  50%  {opacity:0.8}
+  75%  {opacity:0.1}
+  100% {opacity:0.5}
+}
+
+#earth {
+  position:absolute;
+background: radial-gradient(ellipse at center, rgba(125,185,232,1) 0%,rgba(37,186,42,1) 12%,rgba(43,136,217,1) 29%,rgba(255,232,153,1) 51%,rgba(66,183,53,1) 63%,rgba(32,124,202,1) 77%,rgba(32,124,202,1) 77%,rgba(226,255,183,1) 86%,rgba(125,185,232,1) 100%);
+  z-index: 4;
+  width:50px;
+  height:50px;
+  border-radius:180px;
+  overflow:hidden;
+  -webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+border:0px solid white;
+box-shadow: 0px 0px 10px 5px rgba(119,216,255,0.4);
+background-size:600px 600px;
+background-position: 10px 10px;
+animation: earthMovement 14s infinite, gravityRotationY 20s infinite;
+animation-timing-function: linear;
+}
+
+#earthGravity {
+  position:absolute;
+  height:50px;
+  width:50px;
+  background-color:transparent;
+  top:calc(50% - 25px);
+  left:calc(50% - 25px);
+  animation: gravityRotationX 20s infinite;
+  animation-timing-function: linear;
+  z-index:0;
+}
+
+#earthFilterContainer {
+  width:100%;
+  height:100%;
+  filter:url(#earthFilter);
+}
+
+#earth:after {
+  content:'';
+  display:block;
+  position:relative;
+  top:-105%;
+  left:0px;
+  width:110%;
+  height:110%;
+  z-index:100;
+  animation: shadowMovement 20s infinite;
+  animation-timing-function: linear;
+background: linear-gradient(90deg, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); 
+}
+
+@keyframes earthMovement {
+  0%   {transform:rotate(0deg);background-position:10px 10px;}
+  100% {transform:rotate(-360deg);background-position:10px 610px;}
+}
+
+@keyframes shadowMovement {
+  0%   {transform:rotate(0deg);}
+  100% {transform:rotate(360deg);}
+}
+
+@keyframes gravityRotationX { 
+  0% { 
+    z-index:400;
+    transform:translateX(-350px);
+    animation-timing-function: ease-in;
+  }
+  25% { 
+    transform:translateX(0px);
+    animation-timing-function: ease-out;
+  }
+  34% {
+    z-index:-1000;
+  }
+  34.1% {
+    z-index:4;
+  }
+   
+  50% {
+    transform:translateX(350px);
+    animation-timing-function: ease-in;
+  }
+  75% {
+    transform:translateX(0px);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform:translateX(-350px);
+    animation-timing-function: ease-in;
+  }
+}
+
+@keyframes gravityRotationY { 
+  0% { 
+    transform:translateY(-0px) scale(1,1) ;
+    animation-timing-function: ease-out;
+    transform-origin: top top;
+  }
+  25% { 
+    transform:translateY(-60px) scale(.7,.7) ;
+    animation-timing-function: ease-in;
+  }
+  50% {
+    transform:translateY(0px) scale(1,1);
+    animation-timing-function: ease-out;
+  }
+  75% {
+    transform:translateY(60px) scale(1.3,1.3);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform:translateY(0px) scale(1,1);
+    animation-timing-function: ease-out;
+  }
+}
+
+#earthOrbit {
+  position:absolute;
+  top:calc(50% - 60px);
+  left:calc(50% - 350px);
+  z-index:-1;
+}
+
+.starSpearhead {
+  box-sizing: border-box;
+  box-shadow: 0px 0px 3px 1px rgba(143,135,255,0.3);
+  width:5px;
+  height:1px;
+  background-color:white;
+  left:-2px;
+  position:relative;
+  animation: starRotation 3s infinite;
+  animation-timing-function: linear;
+}
+.starSpearhead:after {
+  box-sizing: border-box;
+  box-shadow: 0px 0px 3px 1px rgba(143,135,255,0.3);
+  content:'';
+  display:block;
+  width:1px;
+  position: absolute;
+  height: 5px;
+  background-color: white;
+  left: 2px;
+  top: -2px;
+}
+.starTail {
+  transform-origin: top center;
+  position: absolute;
+}
+
+@keyframes starRotation {
+  0%   {transform:rotate(0deg);}
+  100% {transform:rotate(360deg);}
+}
+
+@keyframes shootingStarAnimation1 {
+  0% {
+    opacity:0;
+    transform:translate(100px,100px);
+  }
+  50% {
+    opacity:1;
+    transform:translate(200px,200px);
+  }
+  100% {
+    opacity:0;
+    transform:translate(300px,300px); 
+  }
+}
+
+@keyframes shootingStarAnimation2 {
+  0% {
+    transform:translate(-100px,100px);
+    opacity:0;
+  }
+  50% {
+    transform:translate(-200px,200px);
+    opacity:1;
+  }
+  100% {
+    transform:translate(-300px,300px);
+    opaicty:0;
+  }
+}
+
+@keyframes shootingStarAnimation3 {
+  0% {
+    transform:translate(-100px,-100px);
+    opacity:0;
+  }
+  50% {
+    transform:translate(-200px,-200px);
+    opacity:1;
+  }
+  100% {
+    transform:translate(-300px,-300px);
+    opaicty:0;
+  }
+}
+
+@keyframes shootingStarAnimation4 {
+  0% {
+    transform:translate(100px,-100px);
+    opacity:0;
+  }
+  50% {
+    transform:translate(200px,-200px);
+    opacity:1;
+  }
+  100% {
+    transform:translate(300px,-300px);
+    opaicty:0;
+  }
+}
+</style>
+
+</head>
+<body>
+<!-- It's kinda heavy on the browser, sorry about that -->
+
+<div id="canvasContainer">
+	<div id="filterContainer">
+		<canvas id="mainstage"></canvas>
+	</div>
+</div>
+<svg id="weirdFilter">
+  <filter id="svgFilter">
+	<feTurbulence id="turbulence" type="turbulence" baseFrequency="0.05"
+	numOctaves="15" />
+	<feDisplacementMap  id="displacement" in="SourceGraphic" scale="25" />
+  </filter>
+<filter id="skyFilter">
+	<feTurbulence id="turbulence1" type="turbulence" baseFrequency="0.009" numOctaves="15" />
+	<feDisplacementMap  id="displacement1" in="SourceGraphic" scale="200" />
+  </filter>
+<filter id="earthFilter">
+<feTurbulence id="turbulence2" type="fractalNoise" baseFrequency="0.2" numOctaves="50" />
+<feTurbulence id="turbulence1" type="turbulence" baseFrequency="0.05" numOctaves="5" />
+<feColorMatrix
+  type = "matrix"
+  values="1     1     0     0     0
+		  1     1     1     0     0
+		  0     0     1     0     0
+		  0     0     0     1     0 "/>
+  </filter>
+</svg>
+
+<div id="earthGravity">
+  <div id="earth">
+    <div id="earthFilterContainer"></div>
+  </div>
+</div>
+<div id="earthOrbit">
+  <svg height="120" width="700">
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0.3)" />
+    </linearGradient>
+  <ellipse cx="350" cy="60" rx="350" ry="60"
+  fill="none" stroke="url(#gradient)" stroke-width="1" />
+  </svg>
+</div>
+
+<script>
+function initiate() {
+  var TO_RADIANS = Math.PI/180;
+	var canvas = document.getElementById("mainstage");
+	var context = canvas.getContext("2d");
+  canvas.width = document.getElementById("canvasContainer").clientWidth;
+  canvas.height = document.getElementById("canvasContainer").clientHeight;
+  var bubbleArray = [];
+  setUpArray(bubbleArray);
+	main();
+	var then = Date.now();
+  function main() {
+	  var now = Date.now();
+	  var delta = now - then;
+	  update();
+	  render();
+	  then = now;
+	  requestAnimationFrame(main);
+	};
+  function setUpArray(array) {
+    let startColors = [
+      "rgba(218,104,11,1)", // orange
+      //"rgba(45,0,0,1)", // deep deep red
+      //"rgba(226,13,23,1)", // red
+      //"rgba(143,7,7,1)", // deep red
+      "rgba(255,246,76,1)", // yellow
+      "rgba(255,246,76,1)", // yellow
+      //"rgba(255,255,255,1)", // white
+    ];
+    let endColors = [
+      "rgba(218,104,11,0)", // orange
+      //"rgba(45,0,0,0)", // deep deep red
+      //"rgba(226,13,23,0)", // red
+      //"rgba(143,7,7,0)", // deep red
+      "rgba(255,246,76,0)", // yellow
+      "rgba(255,246,76,0)", // yellow
+      //"rgba(255,255,255,0)", // white
+    ]
+    for(y=0;y<150;y++) {
+      var angle = Math.round(Math.random() * 360);
+      var targetAngle = Math.round(Math.random() * 360);
+      var init = new Date();
+      var colorPick = Math.floor(Math.random() * startColors.length);
+      var object = {
+        id:y,
+        initiation:0,
+        speed:Math.random(),
+        angle:angle,
+        targetAngle: targetAngle,
+        innerSize:Math.random() + 1,
+        outerSize:Math.random() * 20 + 2,
+        x:Math.floor(Math.random() * canvas.width),
+        y:Math.floor(Math.random() *canvas.height),
+        color:startColors[colorPick],
+        endColor:endColors[colorPick],
+      }
+      array.push(object);
+    }
+  }
+
+  function update() {
+    for(y=0;y<bubbleArray.length;y++) {
+      if(bubbleArray[y].x < -25 || bubbleArray[y].x > canvas.width + 25 ||
+         bubbleArray[y].y < -25 || bubbleArray[y].y > canvas.height + 25) 
+        {
+         bubbleArray[y].x = Math.floor(Math.random() * canvas.width);
+         bubbleArray[y].y = Math.floor(Math.random() * canvas.height);
+         bubbleArray[y].innerSize = Math.random() + 1,
+         bubbleArray[y].outerSize = Math.random() * 20 + 3,
+         bubbleArray[y].initiation = 0.20;
+         bubbleArray[y].angle = Math.round(Math.random() * 360);
+         bubbleArray[y].targetAngle = Math.round(Math.random() * 360);
+        }
+        else {
+           bubbleArray[y].angle += Math.random() * .50 - 0.25;
+        }
+        bubbleArray[y].x -= bubbleArray[y].speed * Math.cos(bubbleArray[y].angle * TO_RADIANS);
+		    bubbleArray[y].y += bubbleArray[y].speed * Math.sin(bubbleArray[y].angle * TO_RADIANS);
+        if(bubbleArray[y].initiation > 0.15) {
+           bubbleArray[y].initiation -= 0.03;
+        }
+        else {
+        bubbleArray[y].initiation -= 0.0001;
+        }
+      } 
+  }
+  
+  function render() {
+    context.clearRect(0,0,canvas.width,canvas.height);
+    for(y=0;y<bubbleArray.length;y++) {
+      renderEntity(bubbleArray[y]);
+    }
+  }
+
+  function renderEntity(object) {
+  context.strokeStyle="transparent";
+  context.beginPath();
+  var opacity = object.initiation;
+  var gradient = context.createRadialGradient(object.x, object.y, object.innerSize, object.x, object.y, object.outerSize);
+  gradient.addColorStop(0.000, object.color);
+  gradient.addColorStop(1.000, object.endColor);
+  context.fillStyle = gradient;
+  context.arc(object.x,object.y, 25, 0, 2 * Math.PI);
+  context.fill();
+  context.stroke();
+  }
+}
+initiate();
+
+doStars();
+
+function doStars() {
+  let width = document.body.clientWidth;
+  let height = document.body.clientHeight;
+  for(y=0;y<200;y++) {
+    var star = document.createElement('div');
+    star.style.width = "2px";
+    star.style.height = "2px";
+    star.style.zIndex = "-1";
+    star.style.backgroundColor = "rgba(255,255,255,1)";
+    star.style.borderRadius = "180px";
+    star.style.position = "absolute";
+    star.style.opacity = 0.5;
+    star.style.zIndex = -10000;
+    star.style.left = Math.floor(Math.random() * width) + 'px';
+    star.style.top = Math.floor(Math.random() * height) + 'px';
+    if( y < 100 ) {
+    star.style.animation = "starShine";
+    star.style.animationIterationCount = "infinite"
+    star.style.animationTimingFunction = "linear";
+    star.style.animationDuration = Math.floor(Math.random() * 5 + 5) + "s";
+      }
+    document.body.append(star);
+  }
+}
+
+document.body.addEventListener("click", function(){shootingStar()});
+
+function shootingStar() {
+  let width = document.body.clientWidth;
+  let height = document.body.clientHeight;
+  let star = document.createElement('div');
+  let starId = "star" + new Date().getTime();
+  star.id = starId;
+  let starSparkle = document.createElement('div');
+  let starTail = document.createElement('div');
+  starTail.className = "starTail";
+  starSparkle.className = "starSpearhead";
+  starTail.style.width = "1px";
+  starTail.style.height = "35px";
+  starTail.style.zIndex = "-1";
+  starTail.style.background = "radial-gradient(circle at top center, rgba(255,255,255,1) 0%, rgba(2,0,36,0) 85%)";
+  starTail.style.borderRadius = "180px";
+  star.style.position = "absolute";
+  star.style.opacity = 0;
+  star.style.zIndex = -10000;
+  star.style.left = Math.floor(Math.random() * width) + 'px';
+  star.style.top = Math.floor(Math.random() * height) + 'px';
+  let rotation = Math.floor(Math.random() * 4) + 1;
+  starTail.style.transform = "rotate(" + (45 + ((rotation * 90)))  + "deg)";
+  star.style.animation = "shootingStarAnimation" + rotation;
+  star.style.animationIterationCount = 1; //"infinite";
+  star.style.animationTimingFunction = "linear";
+  star.style.animationDuration = Math.floor(Math.random() * 2 + 1) + "s";
+  document.body.append(star);
+  document.getElementById(starId).append(starSparkle);
+  document.getElementById(starId).append(starTail);
+};
+
+function shootingStarsFire() {
+  setTimeout(function(){ shootingStar(); shootingStarsFire() }, (Math.random() * 500) + 1000 );
+}
+
+shootingStarsFire();</script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_cn">
+  <head>
+    <title>NBT Editor</title>
+    <script type="text/javascript" src="src/TagLibrary.js"></script>
+    <script type="text/javascript" src="src/HighlightedString.js"></script>
+    <script type="text/javascript" src="src/App.js"></script>
+    <link rel="stylesheet" href="style/app.css" />
+    <link rel="stylesheet" href="lib/jstree/dist/themes/default/style.min.css" />
+    <!--<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>-->
+    <script src="jquery.js"></script>
+    <script src="lib/jstree/dist/jstree.min.js"></script>
+    <script type="text/javascript" src="lib/FileSaver.min.js"></script>
+    <script type="text/javascript">
+      var testInterval;
+      function testEmscripten() {
+        if(Module.Tag === undefined) return;
+        clearInterval(testInterval);
+        Module.TOTAL_MEMORY = 64 * 1024 * 1024;
+        Dependencies.handleLoaded(DEP_EMSCRIPTEN);
+      }
+      var Module = { preRun:[] };
+      Module['preRun'].push(function() {
+        testInterval = setInterval(testEmscripten, 50);
+      });
+      window.addEventListener('load', function() {
+        Dependencies.handleLoaded(DEP_WINDOW);
+      });
+    </script>
+    <script type="text/javascript" src="NBT.js"></script>
+  </head>
+  <body>
+    <div id="drop_zone">
+      <span>
+        <div style="font-size:4px;"><a href="http://xn-efv.cn/ftp/NBTExplorer-2.8.0.zip">NBT编辑器下载</a>
+        <a href="http://github.com/jaquadro/NBTExplorer/releases/">往期版本下载</a></div><br />
+        拖入文件<code style="font-size:6px;color:blue;">level.bat</code><br />
+        或者选择一个文件<br />
+        <input id="file_input" type="file" /><br>
+      </span>
+      <div id="contact" style="font-size:12px;position:fixed;bottom:10px;right:20px;opacity:0.8;">
+        反馈？ <a href="http://irath96.github.io/contact/">Contact me</a>
+      </div>
+    </div>
+    <script>
+      function handleFileSelect(evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+        var files = evt.dataTransfer.files;
+        for (var i = 0, f; f = files[i]; ++i) {
+          var reader = new FileReader();
+          reader.onload = (function(file) {
+            lastFilename = file.name;
+            return function(e) {loadData(e.target.result);};
+          })(f);
+          reader.readAsArrayBuffer(f);
+        }
+        document.querySelector('#drop_zone').style.display = 'none';
+      }
+      function handleDragOver(evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+        evt.dataTransfer.dropEffect = 'copy';
+      }
+      document.getElementById('file_input').onchange = function() {
+        var files = document.getElementById('file_input').files;
+        for (var i = 0, f; f = files[i]; ++i) {
+          var reader = new FileReader();
+          reader.onload = (function(file) {
+            lastFilename = file.name;
+            return function(e) {loadData(e.target.result);};
+          })(f);
+          reader.readAsArrayBuffer(f);
+        }
+        document.querySelector('#drop_zone').style.display = 'none';
+      };
+      var dropZone = document.getElementById('drop_zone');
+      dropZone.addEventListener('dragover', handleDragOver, false);
+      dropZone.addEventListener('drop', handleFileSelect, false);
+    </script>
+    <div id="topbar">
+      <div id="buttons">
+        <input id="open_btn" type="button" value="打开" onclick="javascript:location.href = location.href;" />
+        <input id="save_btn" type="button" value="保存" onclick="javascript:App.save();" />
+        <input id="toggle_hexview_btn" type="button" value="&gt;" onclick="javascript:App.toggleHexview(this);" />
+      </div>
+      <div id="search_bar"><input type="text" id="search_field" placeholder="搜索..." /></div>
+    </div>
+    <div id="screen">
+        <b style="color:red;">修改前记得备份，以免损坏&nbsp;&nbsp;</b><b>详细了解见<a href="https://zh.minecraft.wiki/w/%E7%8E%A9%E5%AE%B6%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F">维基百科</a></b><br />
+        <b>Data&nbsp;&frasl;WorldGenSetting&nbsp;&frasl;seed:存档种子</b><br />
+        <!--<b>Data&frasl;GameRules&frasl;LevelName:"存档名字"</b><br />-->
+        <b>Data&nbsp;&frasl;Player&nbsp;&frasl;Inventory&nbsp&frasl;玩家背包&frasl;Count:数量，Solt:格子，id:物品</b><br />
+        <!--<b>Data&frasl;Player&frasl;enteredNetherPosition玩家坐标</b>-->
+        <div id="tree"></div>
+    </div>
+    <pre id="hexview">hex显示</pre>
+  </body>
+</html>

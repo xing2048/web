@@ -1,0 +1,10 @@
+<litepal>
+    <dbname value="smart_tool" />
+    <version value="1" />
+
+    <list>
+        <mapping class="com.atomcloud.sensor.bean.weather.Province" />
+        <mapping class="com.atomcloud.sensor.bean.weather.City" />
+        <mapping class="com.atomcloud.sensor.bean.weather.County" />
+    </list>
+</litepal>

@@ -1,0 +1,89 @@
+.mod-panel {
+    width: 100%;
+    max-width: 740px;
+    /* min-width: 580px; */
+    margin: 0 auto 30px;
+    _width: 690px;
+}
+.mod-panel .hd{
+    padding-top: 25px;
+    margin-bottom: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.mod-panel .hd h1{
+    font-size: 24px;
+    color:#212121;
+}
+.mod-panel .bd{
+    overflow: hidden;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+.mod-panel .bd .carlogo{
+    overflow: hidden;
+}
+.mod-panel .bd .tabs{
+    overflow: hidden;
+    padding: 8px 0;
+    margin-bottom: 20px;
+    border-bottom: solid 1px #ccc;
+    font-size: 0;
+}
+.mod-panel .bd .tabs a{
+    display: inline-block;
+    padding: 0 15px;
+    margin:0 10px 10px 0;
+    border: solid 1px #B8DCF5;
+    background: #EDF7FF;
+    line-height: 34px;
+    font-size: 16px;
+    color: #348BCF;
+}
+.mod-panel .bd .tabs a:hover,
+.mod-panel .bd .tabs a.active{
+    border-color: #348BCF;
+    background: #348BCF;
+    color: #fff;
+    text-decoration: none;
+}
+.mod-panel .panel{
+    display: none;
+}
+.mod-panel .panels .active{
+    display: block;
+}
+.mod-panel ul{
+    overflow: hidden;
+<<<<<<< HEAD
+    *zoom:1;
+=======
+    *zoom: 1;
+>>>>>>> 9bbe6dd409d5e7525be41396c87735e37b4e31c3
+}
+.mod-panel li{
+    float: left;
+    width: 25%;
+    height: 150px;
+    margin-bottom: 10px;
+    text-align: center;
+    _display:inline;
+    _width:24.9%;
+}
+.mod-panel li img{
+    display: block;
+    max-width: 90%;
+    max-height: 120px;
+    margin:0 auto;
+    _height:120px;
+}
+.mod-panel li span{
+    line-height: 30px;
+}
+.mod-panel .info{
+    line-height: 2;
+    color: #333;
+}
+.mod-panel .info strong{
+    font-weight: bold;
+}

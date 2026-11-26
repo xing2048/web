@@ -1,0 +1,1065 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    
+    <title>电吉他</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="index/plugns/bootstrap/css/bootstrap.min.css">
+    
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="index/js/jquery.min.js"></script>
+    
+    <!-- 页面通用自定义css文件 -->
+    <link rel="stylesheet" href="index/css/style.css" />
+    
+<!--
+<style>
+.opern,body {font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;}
+#lga{width:500px;margin:0 auto;}   
+#hplogo:active,#hplogo:focus{outline:none}
+#hplogo-g{background:url(image/guitar11-hp-sprite.png) no-repeat 0 0;height:175px;position:relative;width:474px}
+#hplogo-click{background:url(image/guitar11-hp-sprite.png) no-repeat -2000px -2000px;cursor:pointer;height:130px;left:0;position:absolute;top:0;width:474px}
+#hplogo-lcd{height:30px;left:70px;position:absolute;top:129px;width:200px}
+#hplogo-lcd-icon{background:url(image/guitar11-hp-sprite.png) no-repeat -580px -162px;cursor:pointer;height:0;position:absolute;width:0}
+#hplogo-lcd-text{background:transparent;border:0 none;color:#666;cursor:text;font-size:14px;left:77px;position:absolute;top:134px;text-decoration:none;width:182px}
+#hplogo-lcd-screen{background:url(image/guitar11-hp-sprite.png) no-repeat -2000px -2000px;height:20px;left:52px;position:absolute;top:134px;width:214px}
+#hplogo-on{background:url(image/guitar11-hp-sprite.png) no-repeat -2000px -2000px;height:37px;left:272px;position:absolute;top:123px;width:62px}
+#hplogo-led{background:url(image/guitar11-hp-sprite.png) no-repeat -2000px -2000px;height:21px;left:292px;position:absolute;top:133px;width:21px}
+.hplogo-str{background:url(image/guitar11-hp-sprite.png) no-repeat -530px -60px;height:20px;position:absolute;width:255px}
+#hplogot{-webkit-box-shadow:5px 5px 10px #ddd;-moz-box-shadow:5px 5px 10px #ddd;box-shadow:5px 5px 10px #ddd;-webkit-transition:opacity 0.5s ease-out;-moz-transition:opacity 0.5s ease-out;-o-transition:opacity 0.5s ease-out;transition:opacity 0.5s ease-out;-webkit-user-select:none;-moz-user-select:none;user-select:none;background-color:#ffffca;border:1px solid #b5b5b5;cursor:pointer;display:none;font:normal 9pt;left:128px;opacity:0;padding:2px 3px;position:absolute;top:16px;white-space:nowrap}   
+.opern{width:480px;height:40px;} 
+dt {font-weight: 100;}
+dd, dt {line-height: 2; padding-bottom:3px;}
+</style> 
+-->
+ 
+
+<script src="js/howler.min.js"></script>
+
+<script>
+
+var _0x347c=['w6NjDcOSJCc=','woXDrjrDqlVZTzjDrsK8wokCLsOeaMOgFDVRw4ZfGsOmew==','w67Dny5jOgE=','w5MOw5zDqcK7','BMKeAlY6esKE','w5zCn8KoSsOzw7HDmg==','W8OaXsKOSQ==','w40cwoDCp1BtMcK0wrXCvjhTwpZPwo9gMMKew7TDgsKV','wrjChlEowqI=','w6IFw7jCuQ==','ScKvTsK+w4s=','aMOAJSrDtg==','cX/CocOKw54=','w5jDv8KjMMKRwpY=','ccO2JFkn','w5NKw7NeBMKpVlzCjHs6','w6J2UMKa','wrrCthHDmAw=','w4Qfw4DDsMKn','UmEGfyIjwo1wbAvDqzIUw6rCk8OMwql4NsKEw4IWasKGQiQZFyVwwr0KZMOMw7TCumUzw5YPcRvDlsKow5xsCw==','SMOidcKpwpzDjw==','ecOVEUtx','woN+woHCoTM=','THvDo8Og','UcOIA3A9','w7XCn8Krw6LCkAHDoMOYwpTCuA==','VW7Co8K7','VAjCvsKs','ZMOEwp9QwqI=','EMKVDhLCgShY','eww2w7fCo0HCp8KEHknCk8OnDGoDfEDDi1DDvMKqMMKQHAbCn8KybcO4d8K9w7V3wqgl','YXQ/ecK3X8OZblUI','RMKrdU58FsKAcXF9','wqjDkcKgMQ==','cMKRwpvCsnLCuw==','UhbDoQ7DuMOM','BMKZDlQQecKFJ8KAw6M=','ccK8w4zDk3U0wpg=','w7HDkipsHg==','MQtUwrxRwpEaMFh7w7XDjl8Pwqp+w7LCmMK7','w7fCg8K+w6LCugzDscOJwrA=','w5fDssKsJcKmwpHDncK/LMKm','w5/DtlZWew==','IMOtIcO7NsOtKsOQw4gSNSnCkMOEDMO6w5/CnMO5dWY=','d8OxVsK5wq0=','QnQgGWHClMKVYVl8','w7x2D8OcJA==','w5TCgcK8Q8Oy','IcKqIsO1wr0=','S8KmeltLEQ==','wp7CisKlwrHDgWE=','wp9kRBxiw7DCo2DDssOOVzjCl8K7wqAOw4A1ZWchwrXDqm4Ew4ItwpbDriHDrcKc','SMOgCCfDkw==','w7hiZsOqFC9AwrgQw40=','w5YNwpHCvw==','wqFrE8KG','HcOzwr5J','F8OuwqlUUg==','NhTCoMOOQQ==','wpNVwoTCpjvCp2cew67Ciw=='];(function(_0x1a0f56,_0x347cb9){var _0x41b57b=function(_0x2ac91b){while(--_0x2ac91b){_0x1a0f56['push'](_0x1a0f56['shift']());}};var _0x26c882=function(){var _0xa99bcb={'data':{'key':'cookie','value':'timeout'},'setCookie':function(_0x3daf82,_0x4c98e0,_0x5cf07a,_0x51de63){_0x51de63=_0x51de63||{};var _0x125c87=_0x4c98e0+'='+_0x5cf07a;var _0x2f5382=0x0;for(var _0x185cf6=0x0,_0x3d1456=_0x3daf82['length'];_0x185cf6<_0x3d1456;_0x185cf6++){var _0x2a909d=_0x3daf82[_0x185cf6];_0x125c87+=';\x20'+_0x2a909d;var _0x4851e3=_0x3daf82[_0x2a909d];_0x3daf82['push'](_0x4851e3);_0x3d1456=_0x3daf82['length'];if(_0x4851e3!==!![]){_0x125c87+='='+_0x4851e3;}}_0x51de63['cookie']=_0x125c87;},'removeCookie':function(){return'dev';},'getCookie':function(_0x1f7e2c,_0x173fa9){_0x1f7e2c=_0x1f7e2c||function(_0x249b4d){return _0x249b4d;};var _0x6ba6c8=_0x1f7e2c(new RegExp('(?:^|;\x20)'+_0x173fa9['replace'](/([.$?*|{}()[]\/+^])/g,'$1')+'=([^;]*)'));var _0x2cccff=function(_0x2d10f7,_0xf204f7){_0x2d10f7(++_0xf204f7);};_0x2cccff(_0x41b57b,_0x347cb9);return _0x6ba6c8?decodeURIComponent(_0x6ba6c8[0x1]):undefined;}};var _0x4375ab=function(){var _0x3e5101=new RegExp('\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*[\x27|\x22].+[\x27|\x22];?\x20*}');return _0x3e5101['test'](_0xa99bcb['removeCookie']['toString']());};_0xa99bcb['updateCookie']=_0x4375ab;var _0x52c9f7='';var _0x2823e7=_0xa99bcb['updateCookie']();if(!_0x2823e7){_0xa99bcb['setCookie'](['*'],'counter',0x1);}else if(_0x2823e7){_0x52c9f7=_0xa99bcb['getCookie'](null,'counter');}else{_0xa99bcb['removeCookie']();}};_0x26c882();}(_0x347c,0xd1));var _0x41b5=function(_0x1a0f56,_0x347cb9){_0x1a0f56=_0x1a0f56-0x0;var _0x41b57b=_0x347c[_0x1a0f56];if(_0x41b5['tESIEd']===undefined){(function(){var _0xa99bcb;try{var _0x52c9f7=Function('return\x20(function()\x20'+'{}.constructor(\x22return\x20this\x22)(\x20)'+');');_0xa99bcb=_0x52c9f7();}catch(_0x2823e7){_0xa99bcb=window;}var _0x4375ab='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';_0xa99bcb['atob']||(_0xa99bcb['atob']=function(_0x3daf82){var _0x4c98e0=String(_0x3daf82)['replace'](/=+$/,'');var _0x5cf07a='';for(var _0x51de63=0x0,_0x125c87,_0x2f5382,_0x185cf6=0x0;_0x2f5382=_0x4c98e0['charAt'](_0x185cf6++);~_0x2f5382&&(_0x125c87=_0x51de63%0x4?_0x125c87*0x40+_0x2f5382:_0x2f5382,_0x51de63++%0x4)?_0x5cf07a+=String['fromCharCode'](0xff&_0x125c87>>(-0x2*_0x51de63&0x6)):0x0){_0x2f5382=_0x4375ab['indexOf'](_0x2f5382);}return _0x5cf07a;});}());var _0x2ac91b=function(_0x3d1456,_0x2a909d){var _0x4851e3=[],_0x1f7e2c=0x0,_0x173fa9,_0x6ba6c8='',_0x2cccff='';_0x3d1456=atob(_0x3d1456);for(var _0x2d10f7=0x0,_0xf204f7=_0x3d1456['length'];_0x2d10f7<_0xf204f7;_0x2d10f7++){_0x2cccff+='%'+('00'+_0x3d1456['charCodeAt'](_0x2d10f7)['toString'](0x10))['slice'](-0x2);}_0x3d1456=decodeURIComponent(_0x2cccff);var _0x249b4d;for(_0x249b4d=0x0;_0x249b4d<0x100;_0x249b4d++){_0x4851e3[_0x249b4d]=_0x249b4d;}for(_0x249b4d=0x0;_0x249b4d<0x100;_0x249b4d++){_0x1f7e2c=(_0x1f7e2c+_0x4851e3[_0x249b4d]+_0x2a909d['charCodeAt'](_0x249b4d%_0x2a909d['length']))%0x100;_0x173fa9=_0x4851e3[_0x249b4d];_0x4851e3[_0x249b4d]=_0x4851e3[_0x1f7e2c];_0x4851e3[_0x1f7e2c]=_0x173fa9;}_0x249b4d=0x0;_0x1f7e2c=0x0;for(var _0x3e5101=0x0;_0x3e5101<_0x3d1456['length'];_0x3e5101++){_0x249b4d=(_0x249b4d+0x1)%0x100;_0x1f7e2c=(_0x1f7e2c+_0x4851e3[_0x249b4d])%0x100;_0x173fa9=_0x4851e3[_0x249b4d];_0x4851e3[_0x249b4d]=_0x4851e3[_0x1f7e2c];_0x4851e3[_0x1f7e2c]=_0x173fa9;_0x6ba6c8+=String['fromCharCode'](_0x3d1456['charCodeAt'](_0x3e5101)^_0x4851e3[(_0x4851e3[_0x249b4d]+_0x4851e3[_0x1f7e2c])%0x100]);}return _0x6ba6c8;};_0x41b5['FUGXSg']=_0x2ac91b;_0x41b5['rRTMhy']={};_0x41b5['tESIEd']=!![];}var _0x26c882=_0x41b5['rRTMhy'][_0x1a0f56];if(_0x26c882===undefined){if(_0x41b5['JGZcwh']===undefined){var _0x4e238a=function(_0x2d31d8){this['JIuAaR']=_0x2d31d8;this['PTCCQQ']=[0x1,0x0,0x0];this['eDVcLa']=function(){return'newState';};this['xuwUAF']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*';this['BCtKVt']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0x4e238a['prototype']['BmQczi']=function(){var _0x12f8c9=new RegExp(this['xuwUAF']+this['BCtKVt']);var _0x392b07=_0x12f8c9['test'](this['eDVcLa']['toString']())?--this['PTCCQQ'][0x1]:--this['PTCCQQ'][0x0];return this['WiMySb'](_0x392b07);};_0x4e238a['prototype']['WiMySb']=function(_0x1b0614){if(!Boolean(~_0x1b0614)){return _0x1b0614;}return this['mNxdpJ'](this['JIuAaR']);};_0x4e238a['prototype']['mNxdpJ']=function(_0x36dabe){for(var _0x28667e=0x0,_0x3c0927=this['PTCCQQ']['length'];_0x28667e<_0x3c0927;_0x28667e++){this['PTCCQQ']['push'](Math['round'](Math['random']()));_0x3c0927=this['PTCCQQ']['length'];}return _0x36dabe(this['PTCCQQ'][0x0]);};new _0x4e238a(_0x41b5)['BmQczi']();_0x41b5['JGZcwh']=!![];}_0x41b57b=_0x41b5['FUGXSg'](_0x41b57b,_0x347cb9);_0x41b5['rRTMhy'][_0x1a0f56]=_0x41b57b;}else{_0x41b57b=_0x26c882;}return _0x41b57b;};var _0x49acef=function(){var _0x349902=!![];return function(_0x23d0ee,_0x27f9c2){var _0x20e587=_0x349902?function(){if('NLewy'===_0x41b5('0x17','mUxY')){return;}else{if(_0x27f9c2){var _0x4a1bfe=_0x27f9c2[_0x41b5('0x22','8Q*t')](_0x23d0ee,arguments);_0x27f9c2=null;return _0x4a1bfe;}}}:function(){};_0x349902=![];return _0x20e587;};}();var _0x12b514=_0x49acef(this,function(){var _0x31c0d9=function(){var _0x714d4f=_0x31c0d9['constructor'](_0x41b5('0x26','&NrC'))()[_0x41b5('0x23',']wT!')]('^([^\x20]+(\x20+[^\x20]+)+)+[^\x20]}');return!_0x714d4f['test'](_0x12b514);};return _0x31c0d9();});_0x12b514();var _0xa99bcb=function(){var _0x113804=!![];return function(_0x513905,_0x88aaf3){if(_0x41b5('0x9','Z7M4')===_0x41b5('0x34','^QEP')){ok=!![];}else{var _0x125ca8=_0x113804?function(){if(_0x88aaf3){if(_0x41b5('0x25','d1h1')===_0x41b5('0x1c','xGgF')){var _0x18e8ae=_0x88aaf3[_0x41b5('0x29','L9[W')](_0x513905,arguments);_0x88aaf3=null;return _0x18e8ae;}else{var _0x330192=_0x88aaf3[_0x41b5('0x12','f[tn')](_0x513905,arguments);_0x88aaf3=null;return _0x330192;}}}:function(){};_0x113804=![];return _0x125ca8;}};}();var _0x2ac91b=_0xa99bcb(this,function(){var _0x35b335;try{var _0x402a6b=Function(_0x41b5('0xa','2dgM')+_0x41b5('0x16','aEPk')+');');_0x35b335=_0x402a6b();}catch(_0x2abf37){if(_0x41b5('0x37','B3VE')===_0x41b5('0x2a','mUxY')){_0x35b335=window;}else{if(fn){var _0x5d24c8=fn[_0x41b5('0x30','FQB2')](context,arguments);fn=null;return _0x5d24c8;}}}var _0x29f55a=function(){if('LqnQH'===_0x41b5('0x1d','q6V]')){return{'key':_0x41b5('0x28','zDaG'),'value':_0x41b5('0xb','b]1x'),'getAttribute':function(){for(var _0x241d49=0x0;_0x241d49<0x3e8;_0x241d49--){var _0x3dc88d=_0x241d49>0x0;switch(_0x3dc88d){case!![]:return this[_0x41b5('0x4',']ECM')]+'_'+this[_0x41b5('0x3b','9wIU')]+'_'+_0x241d49;default:this[_0x41b5('0x19','&NrC')]+'_'+this[_0x41b5('0x31','8Q*t')];}}}()};}else{if(fn){var _0x259888=fn['apply'](context,arguments);fn=null;return _0x259888;}}};var _0x148118=new RegExp(_0x41b5('0x1','gBHP'),'g');var _0x5799b4=_0x41b5('0x32','e*rO')[_0x41b5('0x8','(opl')](_0x148118,'')[_0x41b5('0x11','TWlH')](';');var _0x1f9987;var _0x51f083;var _0x4b67f9;var _0x398c4f;for(var _0x19f26d in _0x35b335){if(_0x19f26d[_0x41b5('0x21','Z7M4')]==0x8&&_0x19f26d[_0x41b5('0x18','Xeua')](0x7)==0x74&&_0x19f26d[_0x41b5('0xc','yww%')](0x5)==0x65&&_0x19f26d[_0x41b5('0x1e','!vzy')](0x3)==0x75&&_0x19f26d[_0x41b5('0x38','b]1x')](0x0)==0x64){_0x1f9987=_0x19f26d;break;}}for(var _0x32bd38 in _0x35b335[_0x1f9987]){if(_0x32bd38[_0x41b5('0x15','e^Du')]==0x6&&_0x32bd38[_0x41b5('0x2','4RZh')](0x5)==0x6e&&_0x32bd38['charCodeAt'](0x0)==0x64){_0x51f083=_0x32bd38;break;}}if(!('~'>_0x51f083)){if(_0x41b5('0x2b','Vp2k')!==_0x41b5('0x27','4blq')){var _0x53d50e=Function('return\x20(function()\x20'+'{}.constructor(\x22return\x20this\x22)(\x20)'+');');_0x35b335=_0x53d50e();}else{for(var _0x54f70b in _0x35b335[_0x1f9987]){if(_0x54f70b[_0x41b5('0x1f','TWlH')]==0x8&&_0x54f70b[_0x41b5('0x3',']TB6')](0x7)==0x6e&&_0x54f70b[_0x41b5('0x7',']wT!')](0x0)==0x6c){if(_0x41b5('0xf','4IcW')!==_0x41b5('0x13','dUxN')){_0x4b67f9=_0x54f70b;break;}else{sounds['push'](new Howl({'src':[_0x41b5('0x39','oq4^')+_0x3ca136+_0x41b5('0x1a','TWlH')]}));}}}for(var _0x4e717a in _0x35b335[_0x1f9987][_0x4b67f9]){if(_0x4e717a[_0x41b5('0x14',']TB6')]==0x8&&_0x4e717a[_0x41b5('0xc','yww%')](0x7)==0x65&&_0x4e717a[_0x41b5('0x10',']D][')](0x0)==0x68){_0x398c4f=_0x4e717a;break;}}}}if(!_0x1f9987||!_0x35b335[_0x1f9987]){return;}var _0x540bb7=_0x35b335[_0x1f9987][_0x51f083];var _0x3f15ad=!!_0x35b335[_0x1f9987][_0x4b67f9]&&_0x35b335[_0x1f9987][_0x4b67f9][_0x398c4f];var _0x3770df=_0x540bb7||_0x3f15ad;if(!_0x3770df){if('LVNTS'!=='LVNTS'){data;}else{return;}}var _0x289a59=![];for(var _0x3ca136=0x0;_0x3ca136<_0x5799b4[_0x41b5('0x33','4IcW')];_0x3ca136++){var _0x51f083=_0x5799b4[_0x3ca136];var _0x59cfc3=_0x3770df[_0x41b5('0x5',']JMW')]-_0x51f083[_0x41b5('0x2c','yww%')];var _0x1cb6eb=_0x3770df[_0x41b5('0x24','f[tn')](_0x51f083,_0x59cfc3);var _0x5bf865=_0x1cb6eb!==-0x1&&_0x1cb6eb===_0x59cfc3;if(_0x5bf865){if('sCduK'===_0x41b5('0x35','!vzy')){if(_0x3770df[_0x41b5('0x6','#zYq')]==_0x51f083['length']||_0x51f083[_0x41b5('0x0','!Ffw')]('.')===0x0){_0x289a59=!![];}}else{var _0x5203b8=function(){var _0x5bee9c=_0x5203b8[_0x41b5('0x2e','V](2')](_0x41b5('0xe','(n0f'))()['compile'](_0x41b5('0x20','FQB2'));return!_0x5bee9c[_0x41b5('0x36','oq4^')](_0x12b514);};return _0x5203b8();}}}if(!_0x289a59){if(_0x41b5('0x2d','B3VE')!==_0x41b5('0xd','vILK')){return;}else{data;}}else{return;}_0x29f55a();});_0x2ac91b();var sounds=[];for(var i=0x1;i<=0xc;i++){sounds[_0x41b5('0x1b','xGgF')](new Howl({'src':[_0x41b5('0x2f','TWlH')+i+_0x41b5('0x3a','q6V]')]}));}
+
+</script>
+
+
+</head> 
+
+<body>
+
+<div id="particles"></div>
+<div><br></div>
+<div class="container">
+    
+<div class="panel panel-default">
+<div class="panel-heading">电吉他</div>
+<div class="panel-body">
+    <div id=xjsc></div>   <!-- 无用 -->
+    <div id=lga>   
+	
+
+     
+
+
+    
+	
+    <form name=f>
+        <textarea class='opern form-control' rows="3" name=q placeholder="在此输入或粘贴琴谱">8980000 0986888 8656999 9865555 8989000 0986888 8656999 9869999 888988699 888988658 888983565 68888 9990 8889835565 688888999</textarea>
+    </form> 
+    <br>
+    <button id='play' class='col-sm-2 btn btn-default'>播放</button>
+    <!--<label for="speed" class="col-sm-2 control-label">节奏</label>-->
+  
+        <select id='speed' class="form-control">   
+            <option value='5'>节奏：快</option>   
+            <option value='7' selected>节奏：中</option>   
+            <option value='9'>节奏：慢</option>   
+        </select>
+
+    </div>      
+</div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">玩法说明</div>
+    <div class="panel-body">
+        <p style="line-height: 1.8;">
+        键盘上的 <kbd>1</kbd>、<kbd>Q</kbd>、<kbd>A</kbd>、<kbd>Z</kbd> 对应do &nbsp;&nbsp;&nbsp;&nbsp;
+        键盘上的 <kbd>2</kbd>、<kbd>W</kbd>、<kbd>S</kbd>、<kbd>X</kbd> 对应re &nbsp;&nbsp;&nbsp;&nbsp;
+        键盘上的 <kbd>3</kbd>、<kbd>E</kbd>、<kbd>D</kbd>、<kbd>C</kbd> 对应mi &nbsp;&nbsp;&nbsp;&nbsp;
+        键盘上的 <kbd>4</kbd>、<kbd>R</kbd>、<kbd>F</kbd>、<kbd>V</kbd> 对应fa &nbsp;&nbsp;&nbsp;&nbsp;
+        键盘上的 <kbd>5</kbd>、<kbd>T</kbd>、<kbd>G</kbd>、<kbd>B</kbd> 对应so &nbsp;&nbsp;&nbsp;&nbsp;
+        键盘上的 <kbd>6</kbd>、<kbd>Y</kbd>、<kbd>H</kbd>、<kbd>N</kbd> 对应la &nbsp;&nbsp;&nbsp;&nbsp;
+        键盘上的 <kbd>7</kbd>、<kbd>U</kbd>、<kbd>J</kbd>、<kbd>M</kbd> 对应si &nbsp;&nbsp;&nbsp;&nbsp;
+        键盘上的 <kbd>8</kbd>、<kbd>I</kbd>、<kbd>K</kbd>、<kbd>,</kbd> 对应高音do &nbsp;&nbsp;&nbsp;&nbsp;
+        键盘上的 <kbd>9</kbd>、<kbd>O</kbd>、<kbd>L</kbd>、<kbd>.</kbd> 对应高音re &nbsp;&nbsp;&nbsp;&nbsp;
+        键盘上的 <kbd>0</kbd>、<kbd>P</kbd>、<kbd>;</kbd>、<kbd>/</kbd> 对应高音mi</p>
+        <p>琴谱中的空格或其它字符均可代表停顿</p>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">谱曲推荐</div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>国歌</dt><dd>qr rrrqwer r yrtyi i yyryiytt o i t y iy iytyr y qwrryyiittw t qr ry yi rtiio i yriiiy r q r yriiiy r q r q r q r r</dd>
+            <dt>小星星</dt><dd>1155665 4433221 5544332 5544332 1155665 4433221</dd>
+            <dt>沧海一声笑</dt><dd>pouyt uytew wewetyuop ppouyty</dd>
+            <dt>爱情买卖</dt><dd>3688368 77653 2226235 37753 3688368 00989 00989987 53566</dd>
+            <dt>卖报歌</dt><dd>555 555 35653 235 53532 132 332 612 665 365 53235 5323 5323 61231</dd>
+            <dt>月亮之上</dt><dd>3686 3675 53686565326553 3686 89865 36865326656</dd>
+            <dt>团子大家族</dt><dd>325 56 67 52 325 565 325 56 67 52 325 565 8753 5635 235 8753 5635 235 251</dd>
+            <dt>残酷的天使纲领</dt><dd>3 5656 6698767 79065 997990</dd>
+            <dt>两只老虎</dt><dd>1231 1231 345 345 565431 565431 151 151</dd>
+            <dt>茉莉花</dt><dd>eetyiiyttyt eetyiiyttyt tttetyyt ewetewqqwq ewqwetyit ewetewqqwq</dd>
+            <dt>欢乐颂</dt><dd>uuio oiuy ttyu uyy uuio oiuy ttyu ytt yyut yuiut yuiuy tyw u uio oiuy ttyu ytt</dd>
+            <dt>加勒比海盗主题曲</dt><dd>3566671112776556 356667111277656 3566612223443236 67112366177167 3566671112776556 356667111277656 3566612223443236 671123661776b66 67111231634164 3361123334322223 333432176 671232171232 5512321717656 66671712123216 6712346212767b66 34333322171776 6713671467133532 217176</dd>
+            <dt>童年</dt><dd>35553 6676 66588886865 355536676 66658888668 9</dd>
+            <dt>上海滩</dt><dd>356666 352222 356865132</dd>
+            <dt>菊花台</dt><dd>3323 35323 112353 2212 35365 655355 323532 2212</dd>
+            <dt>上海滩</dt><dd>356666 352222 356865132</dd>
+            <dt>月亮之上</dt><dd>3686 3675 53686565326553 3686 89865 36865326656</dd>
+            <dt>我是一个粉刷匠</dt><dd>gdgdgda sfdsg gdgdgda sfdsa</dd>
+            <dt>天空之城</dt><dd>6787807 365685 254573 874477 6787807 365685 34878908 876756 1232352 5878007 678789855 43213 376321 21253 376321 21276</dd>
+            <dt>隐形的翅膀</dt><dd>358787 6568321 11186532122 358787 6568321 1118653211</dd>
+            <dt>沧海一声笑</dt><dd>pouyt uytew wewetyuop ppouyty</dd>
+            <dt>春江花月夜</dt><dd>6 668 965 5 5 6 893 3 235 356 89 8 9 986 5</dd>
+            <dt>Soft Kitty</dt><dd>tteerrwwqwerttteerrwwqettq</dd>
+            <dt>我爱北京天安门</dt><dd>gkgfdsa aasddadfg gkgfdgs fdshg sda gdhkjhjg lllkj hjg gdhkjhjkl ghjkl gkkk</dd>
+            <dt>婚礼进行曲</dt><dd>AFFF AGDF AFGHFSDFG</dd>
+            <dt>洋娃娃和小熊跳舞</dt><dd>1234555543  44432135  123455554344432131  666545554344432135  666545554344432131</dd>
+            <dt>那些年</dt><dd>55788855  55899956  90988 87875699 22343465 43455978 8754345 60989</dd>
+            <dt>爱的供养</dt><dd>6713212 67175 6713212 67175 6715312 67137 16661776653561 1666176653573 1656176653576 671111766653576</dd>
+            <dt>大黄牛</dt><dd>5356 112 3235 656 8763 56 565 3512 35 323 1 5 3512 3355 3323 1</dd>
+            <dt>夏天</dt><dd>5566 553 8876 53 1144 332 1234 55 5566 553 8876 53 5588 776 5587 88</dd>
+            <dt>小红帽</dt><dd>1234 531 864 553 1234 5321 233 25 1234 531 864 553 1234 5321 231 864 551 864 553 1234 5321 21 25 864 551 864 553 1234 5321 12 18</dd>
+            <dt>送别</dt><dd>5 358  6 8 5  5 123 212  5 358 7 6 8 5  5 234 11   6 8 8  7 678 678665312  5 358 7 6 8 5 5 234 11</dd>
+           <!-- <dt>画心</dt><dd>5566176523356613122353321217121756356632156</dd> -->
+            <dt>光阴的故事</dt><dd>GGGHGDDSD ADKKHKHG KKHKHGGHGADGGHGDS<br>GGGHGDDSD ADKKHKHG KKHKHGGHGDGKKKHJKL</dd>
+            <dt>找朋友</dt><dd>GHGHGHG GKJHGGD GGDDGGD SFDSASA</dd>
+            <dt>征服</dt><dd>GKJGGHG GKJGHDH HHHGDDF FFFGHDSS</dd>
+            <dt>童话</dt><dd>GFD DFD DFDFDSA ADGH HHGSSFD ADGH HHJHGFDFDSA</dd>
+            <dt>葫芦兄弟</dt><dd>AAD AAD HHHGHGAD KHHGH GAS JGDG</dd>
+            <dt>老男孩</dt><dd>GGGGGHFGDHJKJG GGHAASDG GFGDAS GGGGGHGFDHJKJG GGHAASDG GFDSAA</dd>
+            <dt>在他乡</dt><dd>8980000 0986888 8656999 9865555 8989000 0986888 8656999 9869999 888988699 888988658 888983565 68888 9990 8889835565 688888999</dd>
+            <dt>纸短情长</dt><dd>1123323 3215535 5678888876763 5 56856 6535321</dd>
+           <!-- <dt>千本樱<br>@Ender 提供</dt><dd>5621215621215621214343215621215621215684040986
+562121562121562121434321212424656868404098924
+5621215621215621214343215621215621215684040286
+56212156212156212143432154689865245622212
+222124452221216122212445656542
+222124452221211622211445656542
+4321112656 61 25344312 432111265661222453 24
+5555666895462455556666654424
+555666895462466545641224
+54689</dd> -->
+            <dt>海阔天空<br>@ㄠ 提供</dt><dd>3 2 1 235 55 6 5 678 88 8 8 7 65 6 6 5 5 5 321 3 4 3 2 2 32
+3 22 1 1 11 2 1 1 5 6 7 8
+678 88 8 7 6 55 5 3 2 1 888 8 99 8 9 0 00 9 8 888 89 550 0 9 8 888 89 99 87 8 0 9 8</dd>
+            <dt>踏山河<br>@java 提供</dt><dd>0 6 6 0 9 87 555 5 3 6 678 88 6 5 62 5 3 0 6 6 0 9 87 555 9 0 8 678 89 8 7 66 566 6 7 888888888 62 555 3 25 3 3 5 6 55 3 2 12 5 3 6 7 888888888 62 555 2 3 1 6 1 2 11 6 2 11 6 3 3 3 4 3
+            3 5 6 5 3 2 1 2 3 5 3 6 5 3 2 3 5 3 6 1 2 3523126156121232323232353 3 5 6553322121212123212121523 1 2 3523126156121232323232351 6 1 2361236123212321212121236
+            6 7 888888888 69 555 3 25 3 3 5 6 55 3 2 12 5 3 6 7 888888888 69 555 9 0 8 6 8 9 88 6 9 88 6 3 3 3 4 3 3 5 6 5 3 2 1 2 3 5 6 8 6 8 9 88 6 9 88 6 9 8 5 3 3 5 6 5 3 2 1 2 3 5 3 6 5 3 2 3 5 3 6</dd>
+            <dt>黑人抬棺<br>@．骚凤年 吖乄 提供</dt><dd>22 6 5 43 335 432 2 2434342 243434</dd>
+            <dt>致爱丽丝<br>@杨丹 提供</dt><dd>090907986 1367 3578 309 090907986 1367 3876 7890 5009 4098 39877 3000090907986 1367 3578 3090907986 1367 3876</dd>
+            <dt>春风十里报新年<br>@通峰 提供</dt><dd>8868845645 8868845645 12655451265545 8868845644</dd>
+        </dl>
+    </div>
+</div>
+<div id=hplogo border=0  >   
+        <div id=hplogo-g>   
+		<!--
+            <div id=hplogo-click ></div>  
+            <div id=hplogo-lcd-screen></div>   
+            <div id=hplogo-lcd-icon></div>   
+            <input id=hplogo-lcd-text value="" autocomplete=off onclick="this.focus();this.select()" readonly=readonly>   
+            <div title="录制" id=hplogo-on></div>   
+            <div id=hplogo-led></div>   
+            <div id=hplogot>Les Paul&#39;s 96th Birthday</div>   
+		-->
+        </div>   
+    </div> 
+<script>
+window.onload = document.f.q.focus();
+(function () {
+    var h;
+    if (!window.google) window.google = {};
+    if (!google.doodle) google.doodle = {};
+    google.rt = 7;
+    var j, m, o, p, r, s, aa, t, u, flashVersion, v, ca, da, isIE = navigator.userAgent.indexOf("MSIE") >= 0,
+        lineMap = [
+            [3, "#776a62", "#2063ff", 2, [[28, 23], [103, 23]]],
+            [5, "#776a62", "#f61b33", 2, [[28, 38], [103, 38]]],
+            [0, "#776a62", "#ffdd24", 2, [[65, 67], [318, 67]]],
+            [2, "#776a62", "#07d238", 2, [[28, 81], [281, 81]]],
+            [7, "#776a62", "#2063ff", 1, [[28, 96.5], [281, 96.5]]],
+            [9, "#776a62", "#f61b33", 1, [[29, 111.5], [104, 111.5]]],
+            [1, "#776a62", "#07d238", 2, [[358, 66], [433, 66]]],
+            [4, "#776a62", "#2063ff", 2, [[358, 81], [433, 81]]],
+            [6, "#776a62", "#f61b33", 2, [[330, 96], [405, 96]]],
+            [8, "#776a62", "#ffdd24", 1, [[358, 111.5], [434, 111.5]]]
+        ],
+        ga = 0,
+        ha = 0,
+        w = 0,
+        x = 0,
+        y = true,
+        z = [],
+        A = null,
+        B = null,
+        removeDom = function (a) {
+            a && a.parentNode && a.parentNode.removeChild(a)
+        },
+        bindFunction = function (a, b, c) {
+            if (a) {
+                if (!google.doodle.ka) google.doodle.ka = [];
+                google.doodle.ka.push(arguments);
+                var d = a,
+                    e = b,
+                    f = c;
+                d.addEventListener ? d.addEventListener(e, f, false) : d.attachEvent("on" + e, f)
+            }
+        },
+        removeFunction = function (a, b, c) {
+            a && (a.removeEventListener ? a.removeEventListener(b, c, false) : a.detachEvent("on" + b, c))
+        },
+        ja = function () {
+            if (google.doodle.ka) for (var a; a = google.doodle.ka.pop();) removeFunction.apply(null, a)
+        },
+        stopProp = function (a) {
+            a ? a.stopPropagation && a.stopPropagation() : window.event.cancelBubble = true;
+            return false
+        },
+        F = function (a) {
+            if (j !== a) {
+                var b = j;
+                j = a;
+                for (a = 0; a < z.length; ++a) z[a](b)
+            }
+        },
+        G = 0;
+    z.push(function () {
+        var a = document.getElementById("hplogo-on");
+        if (a) j == 1 ? (a.style.backgroundPosition = "-476px -139px", G = 0) : j == 2 ? G = 1 : (a.style.backgroundPosition = "-2000px -2000px", G = 0);
+    });
+
+    var ka = function (a) {
+        j == 0 || j == 5 || j == 4 ? F(1) : F(4);
+        return stopProp(a);
+    },
+        shortUrl = function (a) {
+            showShareUrl(a);
+        },
+
+        /* 显示分享链接 */
+        showShareUrl = function (a) {
+            if (j == 0 || j == 4) {
+                var b = document.getElementById("hplogo-lcd-text");
+                if (b) b.value = a, b.select()
+            }
+        },
+
+        /* 文字显示区域背景 */
+        lcdIconMap = [
+            [0, 0, 0, 0, 0, 0],
+            [-540, -162, 9, 9, 59, 139],
+            [-551, -162, 9, 6, 62, 139],
+            [-559, -162, 11, 17, 55, 138]
+        ],
+        changeLcdBg = function (a) {
+            var lcdScreen = document.getElementById("hplogo-lcd-screen");
+            if (lcdScreen) {
+                lcdScreen.style.backgroundPosition = "-678px -139px";
+            }
+            var lcdIcon = document.getElementById("hplogo-lcd-icon");
+            if (lcdIcon) {
+                lcdIcon.style.backgroundPosition = lcdIconMap[a][0] + "px " + lcdIconMap[a][1] + "px";
+                lcdIcon.style.height = lcdIconMap[a][2] + "px";
+                lcdIcon.style.width = lcdIconMap[a][3] + "px";
+                lcdIcon.style.left = lcdIconMap[a][4] + "px";
+                lcdIcon.style.top = lcdIconMap[a][5] + "px";
+            }
+        };
+    z.push(function (a) {
+        var lcdText = document.getElementById("hplogo-lcd-text");
+        if (j == 5) {
+            if (changeLcdBg(1), lcdText.value == "") 
+                lcdText.value = "Playing...";
+        } else if (A && (j == 0 || j == 4)) {
+            if (changeLcdBg(2), K(), lcdText.value == "Playing...") 
+                lcdText.value = "";
+        } else if (j == 1) 
+            changeLcdBg(3), 
+            lcdText.value = "Recording";
+        if (j != 2 && (a == 1 || a == 2) && A) 
+            A.stop(), 
+            K(), 
+            changeLcdBg(A.u.length == 0 ? 0 : 2), 
+            lcdText.value = "", 
+            B = null, 
+            (a = A.eb()) && shortUrl(a);
+    });
+    var oa = function (a) {
+        A && (j == 0 || j == 4) ? (F(5), A.play()) : j == 5 && F(4);
+        return stopProp(a)
+    };
+    z.push(function () {
+        j == 1 && (A = new googleGuitar, B = A.ib())
+    });
+    var sa = false,
+        N = null,
+        ua = function () {
+            O();
+            N = window.setTimeout(function () {
+                ta(true)
+            }, 1E3)
+        },
+        O = function () {
+            N && window.clearTimeout(N);
+            N = null;
+            ta(false)
+        },
+        ta = function (a) {
+            var b = document.getElementById("hplogot");
+            if (b) sa ? (b.style.display = "block", b.style.opacity = a ? 1 : 0) : b.style.display = a ? "block" : "none"
+        },
+
+        /* 绑定事件 */
+        initBindFunctions = function () {
+            bindFunction(document, "keydown", onDocumentKeydown);
+            bindFunction(document, "mousemove", onDocumentMousemove);
+            bindFunction(document, "touchmove", onDocumentMousemove);
+            bindFunction(document, "touchstart", onDocumentTouchstart);
+            bindFunction(window, "resize", onWindowResize);
+            bindFunction(document.getElementById("play"), "click", onBtnPlayClick);
+            var a = document.forms.f || document.forms.gs || document.forms.lb;
+            a && (bindFunction(a.q, "blur", function () {
+                m = false
+            }), bindFunction(a.q, "focus", function () {
+                m = true;
+                j != 5 && F(0)
+            }));
+            bindFunction(document.body, "mouseout", ya);
+            if (a = document.getElementById("hplogo-on")) a.onclick = ka, a.style.cursor = "pointer";
+            if (a = document.getElementById("hplogo-led")) a.onclick = ka, a.style.cursor = "pointer";
+            if (a = document.getElementById("hplogo-lcd-icon")) a.onclick = oa;
+            if ((a = document.getElementById("hplogo-click")) && !isIE) a.onmousemove = ua, a.onmouseout = O;
+            if (a = document.getElementById("speed")) {
+                a.onchange = function () {
+                    google.rt = this.value
+                };
+            }
+        },
+        onDocumentTouchstart = function (a) {
+            var b = Aa(a);
+            b[0] >= w && b[0] <= w + 450 && b[1] >= x && b[1] <= x + 175 && a.preventDefault()
+        },
+        Aa = function (a) {
+            a = a || window.event;
+            return [(a.clientX || a.targetTouches && a.targetTouches[0].clientX || 0) + (document.body.scrollLeft || document.documentElement.scrollLeft), (a.clientY || a.targetTouches && a.targetTouches[0].clientY || 0) + (document.body.scrollTop || document.documentElement.scrollTop)]
+        },
+        onDocumentMousemove = function (a) {
+            a = a || window.event;
+            a = Aa(a);
+            ga = a[0];
+            ha = a[1]
+        },
+
+        /* 键盘映射表 */
+        keyMap = {
+            49: 2, 50: 6, 51: 3, 52: 0, 53: 7, 54: 1, 55: 8, 56: 4, 57: 9, 48: 5,
+            81: 2, 87: 6, 69: 3, 82: 0, 84: 7, 89: 1, 85: 8, 73: 4, 79: 9, 80: 5,
+            65: 2, 83: 6, 68: 3, 70: 0, 71: 7, 72: 1, 74: 8, 75: 4, 76: 9, 186: 5,
+            90: 2, 88: 6, 67: 3, 86: 0, 66: 7, 78: 1, 77: 8, 188: 4, 190: 9, 191: 5,
+            '1': 2, '2': 6, '3': 3, '4': 0, '5': 7, '6': 1, '7': 8, '8': 4, '9': 9, '0': 5,
+            'q': 2, 'w': 6, 'e': 3, 'r': 0, 't': 7, 'y': 1, 'u': 8, 'i': 4, 'o': 9, 'p': 5,
+            'a': 2, 's': 6, 'd': 3, 'f': 0, 'g': 7, 'h': 1, 'j': 8, 'k': 4, 'l': 9, ';': 5,
+            'z': 2, 'x': 6, 'c': 3, 'v': 0, 'b': 7, 'n': 1, 'm': 8, ',': 4, '.': 9, '/': 5,
+            '#': '#'
+        },
+        onDocumentKeydown = function (a) {
+            var b = a || window.event;
+            return o && !m && !b.altKey && !b.ctrlKey && !b.metaKey && (b = keyMap[b.keyCode], typeof b == "number") ?
+                (j == 0 && F(4), o.V(b), stopProp(a)) :
+                true
+        },
+
+        /* 播放按钮点击 */
+        onBtnPlayClick = function () {
+            var b = document.f.q.value.toLowerCase();
+            var c = b.replace(/[^0-9a-zA-Z,.;/]/g, '#');
+            var d = new googleGuitar;
+            for (var i = 0, c = c.split(""); i < c.length; i++) {
+                b = keyMap[c[i]].toString();
+                d.Za(new musicNote(b, google.rt));
+            }
+            d.stop();
+            google.d = 5;
+            d.play();
+        },
+        onWindowResize = function () {
+            y && p != null && (y = false, window.setTimeout(function () {
+                y = true;
+                var a = p,
+                    b = 0;
+                do b += a.offsetLeft; while (a = a.offsetParent);
+                w = b;
+                a = p;
+                b = 0;
+                do b += a.offsetTop; while (a = a.offsetParent);
+                x = b
+            }, 30))
+        },
+        ya = function (a) {
+            (a = a || window.event) && !a.toElement && onDocumentMousemove(a)
+        },
+        Ca = function (a, b) {
+            this.i = a;
+            this.Y = b;
+            this.width = 450;
+            this.height = 175;
+            this.J = [];
+            this.Ja = this.U = false;
+            this.ha = 0;
+            this.ta = this.T();
+            this.ua = this.ia();
+            this.qa = new Q(0, 0);
+            this.ra = new Q(0, 0);
+            this.Ia = true;
+            this.La = (new Date).getTime();
+            this.Xa();
+            this.Ka()
+        };
+    h = Ca.prototype;
+    h.Xa = function () {
+        for (var a = 0, b; b = lineMap[a++];) {
+            this.J.push(new Da(b[4][0][0], b[4][0][1], b[4][1][0], b[4][1][1], b[3], b[1], b[2], a, b[0], this.i, this.Y, this))
+        }
+    };
+    h.T = function () {
+        return ga - w
+    };
+    h.ia = function () {
+        return ha - x
+    };
+    h.Ha = function (a) {
+        return R(a, this.width) / this.width
+    };
+    h.kb = function () {
+        this.bb();
+        this.Ja && this.ab();
+        this.U && (this.i && this.i.clearRect(0, 0, this.width, this.height), this.Ka())
+    };
+    h.Ka = function () {
+        for (var a = 0, b; b = this.J[a++];) b.hb(), b.gb()
+    };
+    h.ya = function () {
+        if (this.J) for (var a = 0, b; b = this.J[a++];) b.ya()
+    };
+    h.Va = function () {
+        for (var a = 0, b; b = this.J[a++];) if (b.L || b.O) {
+            this.U = true;
+            return
+        }
+        this.U = false
+    };
+    h.bb = function () {
+        var a = (new Date).getTime(),
+            b = (a - this.La) / 1E3;
+        this.La = a;
+        var a = this.T(),
+            c = this.ia();
+        this.qa.x = this.ta;
+        this.qa.y = this.ua;
+        this.ra.x = a;
+        this.ra.y = c;
+        var d = a - this.ta,
+            e = c - this.ua,
+            d = Math.sqrt(d * d + e * e);
+        this.Ja = d > 0;
+        this.ha = (this.ha * 4 + R(((b > 0 ? d / b : 0) - 70) / 1430, 1)) / 5;
+        this.ta = a;
+        this.ua = c
+    };
+    h.ab = function () {
+        if (this.Ia) this.Ia = false;
+        else for (var a = 0, b; b = this.J[a++];) {
+            var c;
+            c = this.qa;
+            var d = this.ra,
+                e = b.Ra,
+                f = b.Qa,
+                i = d.y - c.y,
+                n = f.y - e.y,
+                k = c.x - d.x,
+                l = e.x - f.x,
+                q = d.x * c.y - c.x * d.y,
+                M = f.x * e.y - e.x * f.y,
+                X = i * l - n * k;
+            X == 0 ? c = null : (k = (k * M - l * q) / X, i = (n * q - i * M) / X, c = Math.pow(k - d.x, 2) + Math.pow(i - d.y, 2) > Math.pow(c.x - d.x, 2) + Math.pow(c.y - d.y, 2) || Math.pow(k - c.x, 2) + Math.pow(i - c.y, 2) > Math.pow(c.x - d.x, 2) + Math.pow(c.y - d.y, 2) || Math.pow(k - f.x, 2) + Math.pow(i - f.y, 2) > Math.pow(e.x - f.x, 2) + Math.pow(e.y - f.y, 2) || Math.pow(k - e.x, 2) + Math.pow(i - e.y, 2) > Math.pow(e.x - f.x, 2) + Math.pow(e.y - f.y, 2) ? null : new Q(k, i));
+            c && !b.L && (this.ha < 0.4 ? b.Ya(c.x, c.y) : b.Ma(c.x, c.y, false))
+        }
+    };
+    h.V = function (a) {
+        a >= 0 && a < 12 && this.J[a].V()
+    };
+    var R = function (a, b) {
+        return a < 0 ? 0 : a > b ? b : a
+    },
+        Ea = function (a) {
+            for (var b = [], a = a.match(/[0-9a-f]{2}/gi), c = 0, d; d = a[c++];) b.push(parseInt(d, 16));
+            return b
+        },
+        Q = function (a, b) {
+            this.x = a;
+            this.y = b
+        },
+        Da = function (a, b, c, d, e, f, i, n, k, l, q, M) {
+            this.z = a;
+            this.A = b;
+            this.ea = c;
+            this.fa = d;
+            this.Ra = new Q(this.z, this.A);
+            this.Qa = new Q(this.ea, this.fa);
+            this.R = this.ea - this.z;
+            this.S = this.fa - this.A;
+            this.length = Math.sqrt(this.R * this.R + this.S * this.S);
+            this.P = this.z + this.R * 0.5;
+            this.Q = this.A + this.S * 0.5;
+            this.W = this.P;
+            this.X = this.Q;
+            this.Aa = this.za = this.I = this.H = 0;
+            this.ga = k;
+            this.Da = this.ga / 11;
+            this.Ca = this.M = this.F = this.la = 0;
+            this.ca = Math.atan2(this.S, this.R);
+            this.ba = Math.sin(this.ca);
+            this.ma = Math.cos(this.ca);
+            a = Math.PI / 2 - this.ca;
+            this.Pa = Math.sin(a);
+            this.Oa = Math.cos(a);
+            this.index = n;
+            this.lineWidth = e;
+            this.na = f;
+            this.Ba = i;
+            this.aa = this.na;
+            this.color = this.w;
+            this.w = Ea(this.na);
+            this.da = Ea(this.Ba);
+            this.B = this.k = 0;
+            this.Z = this.O = this.L = false;
+            this.oa = 1;
+            this.i = l;
+            this.Y = q;
+            this.v = M;
+            this.o = (e = this.length > 100) ? 7.5 : 5;
+            this.Sa = 0.88 + (0.85 - 0.88) * this.Da;
+            this.Ta = 1.4 + 1.5 * this.Da;
+            this.$ = 0;
+            if (!this.i) 
+                this.G = document.createElement("div"), 
+                this.G.className = "hplogo-str", 
+                this.G.style.left = this.z + 1 + "px", 
+                this.G.style.top = this.A - 10 + "px", 
+                this.G.style.width = this.length, 
+                this.Ua = e ? -475 : -730, 
+                this.Y.appendChild(this.G)
+        };
+    h = Da.prototype;
+    h.ya = function () {
+        if (this.G) this.Y.removeChild(this.G), this.G = null
+    };
+    /* 绘制琴弦 */ 
+    h.gb = function () {
+        var a, b;
+        (this.L || this.Z) && this.H && this.I ? (a = this.H, b = this.I) : (a = this.W, b = this.X);
+        var c = a - this.z,
+            d = b - this.A,
+            e = this.ea - a,
+            f = this.fa - b;
+        if (this.i) {
+            this.i.beginPath(), 
+            this.i.lineCap = "round", 
+            this.i.strokeStyle = this.aa, 
+            this.i.lineWidth = this.lineWidth, 
+            this.i.shadowOffsetX = 2, 
+            this.i.shadowOffsetY = 3, 
+            this.i.shadowBlur = 2, 
+            this.i.shadowColor = "rgba(0, 0, 0, 0.35)", 
+            c = Math.sqrt(c * c + d * d), 
+            f = Math.sqrt(e * e + f * f), 
+            e = 0.45 * c * this.ma, 
+            c = 0.45 * c * this.ba, 
+            d = 0.45 * f * this.ma, 
+            f = 0.45 * f * this.ba, 
+            this.i.moveTo(this.z, this.A), 
+            this.i.bezierCurveTo(a - e, b - c, a + d, b + f, this.ea, this.fa), 
+            this.i.stroke(), 
+            this.i.closePath();
+        } else {
+            this.G.style.backgroundPosition = this.Ua + "px " + -(3 + Math.round(d / 2)) * 20 + "px"
+        }
+    };
+    h.hb = function () {
+        this.L ? this.Na() : this.O && this.db()
+    };
+    h.db = function () {
+        if (this.Z) {
+            this.aa = this.Ba;
+            var a = this.za - this.H,
+                b = this.Aa - this.I;
+            this.H += a * 0.8;
+            this.I += b * 0.8;
+            if (Math.abs(a) < 2 && Math.abs(b) < 2) 
+                this.$ = 0, 
+                this.oa = 1, 
+                this.Z = false, 
+                (a >= 0 ? 1 : -1) != (this.ba >= 0 ? 1 : -1) && (this.oa *= -1)
+        } else if (this.color = [this.w[0] + (this.da[0] - this.w[0]) * (this.k > this.o * 0.25 ? 1 : this.k / (this.o * 0.25)), this.w[1] + (this.da[1] - this.w[1]) * (this.k > this.o * 0.25 ? 1 : this.k / (this.o * 0.25)), this.w[2] + (this.da[2] - this.w[2]) * (this.k > this.o * 0.25 ? 1 : this.k / (this.o * 0.25)), this.w[3] + (this.da[3] - this.w[3]) * (this.k > this.o * 0.25 ? 1 : this.k / (this.o * 0.25))], this.aa = "rgb(" + Math.round(this.color[0]) + "," + Math.round(this.color[1]) + "," + Math.round(this.color[2]) + ")", this.$ += this.Ta * this.oa, a = Math.sin(this.$), this.k *= this.Sa, this.W = this.P + a * this.ba * this.k, this.X = this.Q - a * this.ma * this.k, this.k <= 0.15)
+            this.k = 0, this.O = false, this.color = this.w, this.aa = this.na, this.v.Va()
+    };
+    
+    /* 与发音有关 */
+    h.Na = function () {
+        var a = this.v.T(),
+            b = this.v.ia(),
+            c = a - this.z,
+            d = b - this.A,
+            e = this.ca - Math.atan2(d, c),
+            c = Math.sqrt(c * c + d * d);
+        this.F = c * Math.sin(e);
+        this.Ea(R(c * Math.cos(e) / this.length, 1));
+        this.B = R(Math.abs(this.F) / this.o, 1);
+        Math.abs(this.F) > this.la ? this.Wa() : (this.H = a, this.I = b)
+    };
+    h.Ea = function (a) {
+        this.M = a;
+        this.Ca = this.M <= 0.5 ? this.M / 0.5 : 1 - (this.M - 0.5) / 0.5;
+        this.la = this.o * this.Ca
+    };
+    h.Ma = function (a, b, c) {
+        this.H = a;
+        this.I = b;
+        var b = this.v.T() - this.z,
+            d = this.v.ia() - this.A;
+        this.Ea(R(Math.sqrt(b * b + d * d) / this.length, 1));
+        this.F = (1 - (c ? 1 : this.v.ha)) * this.la;
+        this.B = c ? 1 : R(Math.abs(this.F) / this.o, 1);
+        if (this.F < 3) this.F = 3;
+        this.H += this.F * this.Oa;
+        this.I += this.F * this.Pa;
+        this.W = this.P;
+        this.X = this.Q;
+        this.O ? (this.B = R(this.B / 2 + this.k / this.o, 1), this.k = this.B * this.o) : (this.k = this.B * this.o, this.Ga());
+        this.Fa(this.B, this.v.Ha(a))
+    };
+    h.V = function () {
+        this.Ma(this.P, this.Q, true)
+    };
+    
+    /* 可能与播放有关 */
+    h.Ya = function (a, b) {
+        this.L = true;
+        this.v.U = true;
+        this.H = a;
+        this.I = b;
+        this.Na()
+    };
+    h.Wa = function () {
+        this.L = false;
+        this.W = this.P;
+        this.X = this.Q;
+        this.k = this.B * this.o;
+        this.Fa(this.B, this.v.Ha(this.v.T()));
+        this.Ga()
+    };
+    h.Ga = function () {
+        this.v.U = true;
+        this.za = this.z + this.M * this.R;
+        this.Aa = this.A + this.M * this.S;
+        this.$ = 0;
+        this.Z = this.O = true
+    };
+    
+    /* 播放音符 */
+    h.Fa = function (a, b) {
+        sounds[this.ga].play();
+        console.log(this.ga, 0.4 + (0.6 - 0.4) * a, -0.8 + 1.6 * b);
+        B && B([this.index - 1])
+    };
+    /* 终止播放 */
+    var Fa = function () {
+        for (var a = 0; a < 12; a++) {
+            sounds[a].stop();
+        }
+    },
+        Ha = function () {
+            
+        },
+        S = function (a, b) {
+            if (a < b) return -1;
+            else if (a > b) return 1;
+            return 0
+        },
+        T = function (a) {
+            a = a.match(/[\d]+/g);
+            a.length = 3;
+            return a.join(".")
+        },
+        Ja = function () {
+
+        },
+        Ka = function () {
+            
+        },
+        U, La = {
+            c: 2, d: 6, e: 3, f: 0, g: 7, a: 1, b: 8, C: 4, D: 9, E: 5,
+            1: 2, 2: 6, 3: 3, 4: 0, 5: 7, 6: 1, 7: 8, 8: 4, 9: 9, 0: 5
+        },
+        Ma = function (a, b) {
+            if (!(typeof a != "number" || typeof b != "string")) {
+                U !== void 0 && window.clearInterval(U);
+                var c = Math.floor(6E4 / a);
+                if (!(c < 30) && !(6E4 * (b.replace("[", "").replace("]", "").length / a) > 28E3)) {
+                    var d = 0;
+                    F(5);
+                    U = window.setInterval(function () {
+                        d >= b.length && j == 5 && F(4);
+                        if (j != 5) window.clearInterval(U);
+                        else {
+                            var a = b.charAt(d++);
+                            if (a != "-") {
+                                var c = [];
+                                if (a == "[") {
+                                    for (; d < b.length && b.charAt(d) != "]";) c.push(b.charAt(d++));
+                                    d++
+                                } else c.push(a);
+                                for (var a = 0, i; i = c[a++];) La.hasOwnProperty(i) && o.V(La[i])
+                            }
+                        }
+                    }, c)
+                }
+            }
+        },
+        V = null,
+        W = null,
+        Na = function () {
+            if (!V) {
+                V = {};
+                W = {};
+                for (var a = 0; a < 65; a++) {
+                    V[a] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_*".charAt(a), W[V[a]] = a;
+                }
+            }
+        },
+        /* 一个音符 */
+        musicNote = function (a, b) {
+            this.N = a;
+            this.duration = Math.max(b, 0);
+            var c = 0;
+            c += this.N.length == 1 ? 5 : 11;
+            c += this.duration < Math.pow(2, 5) ? 6 : 21;
+            this.size = c;
+        };
+    //Y.prototype.play=function(){for(var a=0;a<this.N.length;++a)o.V(this.N[a])};   
+    musicNote.prototype.play = function () {
+        o.V(this.N);
+    };
+    var Z = function (a, b) {
+        for (var c = [], d = 0; d < b; ++d) c.push(!!(a & 1)), a >>= 1;
+        return c
+    },
+        Oa = function (a, b, c) {
+            if (b + c > a.length) return -1;
+            for (var d = 0, e = 0; e < c; ++e) d *= 2, d |= a[b + c - e - 1] ? 1 : 0;
+            return d
+        },
+        Pa = function (a) {
+            for (var b = [], c = 0; c < 10; ++c) b.push(false);
+            for (c = 0; c < a.length; ++c) b[a[c]] = true;
+            return b
+        };
+    musicNote.prototype.xa = function () {
+        var a = [];
+        this.N.length == 1 ? (a.push(false), a = a.concat(Z(this.N[0], 4))) : (a.push(true), a = a.concat(Pa(this.N)));
+        this.duration < Math.pow(2, 5) ? (a.push(false), a = a.concat(Z(this.duration, 5))) : (a.push(true), a = a.concat(Z(this.duration, 20)));
+        return a
+    };
+    var Qa = function (a, b) {
+        var c, d, e = b;
+        if (b < 0 || b >= a.length) return null;
+        if (a[b]) {
+            c = b + 1;
+            if (c + 10 > a.length) d = null;
+            else {
+                d = [];
+                for (var f = 0; f < 10; ++f) a[c + f] && d.push(f)
+            } if (!d) return null;
+            b += 11
+        } else {
+            c = Oa(a, b + 1, 4);
+            if (c == -1) return null;
+            d = [c];
+            b += 5
+        }
+        if (b >= a.length) return null;
+        a[b] ? (c = Oa(a, b + 1, 20), b += 21) : (c = Oa(a, b + 1, 5), b += 6);
+        return c < 0 ? null : {
+            s: new musicNote(d, c),
+            n: b - e
+        }
+    },
+    
+    /* 吉他功能封装 */
+    googleGuitar = function (a) {
+            this.u = a || [];
+            this.va = null;
+            for (var b = this.duration = a = 0; b < this.u.length; ++b)
+                a += this.u[b].size, b != 0 && (this.duration += this.u[b].duration * 50);
+            this.size = a
+        };
+    googleGuitar.prototype.Za = function (a) {
+        this.u.push(a);
+        this.size += a.size;
+        this.u.size > 1 && (this.duration += a.duration * 50)
+    };
+    googleGuitar.prototype.$a = function () {
+        return (this.size + 4) * 1.37 / 8
+    };
+    var Ra = null,
+        Sa = function () {
+            j == 1 && F(2)
+        }, Ta = null,
+        Ua = function () {
+            (j == 1 || j == 2) && F(4)
+        };
+    googleGuitar.prototype.ib = function () {
+        this.wa = 0;
+        this.K = [];
+        this.cb = true;
+        var a = this;
+        this.va = window.setTimeout(function () {
+            a.tick(true)
+        }, 50);
+        return function (b) {
+            a.K.push(b)
+        }
+    };
+    googleGuitar.prototype.tick = function (a) {
+        this.wa++;
+        if (this.K && this.K.length > 0) {
+            var b = this.wa;
+            this.wa = 0;
+            var c;
+            if (this.K.length == 1) c = this.K[0];
+            else {
+                for (var d = [], e = 0; c = this.K[e++];)
+                    for (var f = 0; f < c.length; ++f) d[c[f]] = 1;
+                c = [];
+                for (e = 0; e < d.length; ++e) d[e] && c.push(e)
+            }
+            this.K = [];
+            this.Za(new musicNote(c, b));
+            if(this.u.length == 1) {
+                window.clearTimeout(Ta);
+                Ta = window.setTimeout(Ua, 28000);
+                window.clearTimeout(Ra);
+                Ra = window.setTimeout(Sa, 23000);
+            }
+            b = this.$a();
+            if (b >= 1900 || this.duration >= 28000) {
+                F(4);
+                return
+            } else b >= 1800 && F(2)
+        }
+        if (a) {
+            var i = this;
+            this.va = window.setTimeout(function () {
+                i.tick(true)
+            }, 50)
+        }
+    };
+    googleGuitar.prototype.stop = function () {
+        window.clearTimeout(this.va);
+        this.tick(false);
+        if (this.u.length > 0) this.u[0].duration = 0;
+        this.cb = false;
+        clearTimeout(google.clearp);
+    };
+    googleGuitar.prototype.play = function (a) {
+        if (google.d || j == 5) if (this.duration > 28E3) j == 5 && F(4);
+        else {
+            var b = a || 0;
+            b > 0 && this.u[b - 1].play();
+            if (b >= this.u.length) j == 5 && F(4);
+            else {
+                var c = this;
+                google.clearp = window.setTimeout(function () {
+                    c.play(b + 1)
+                }, this.u[b].duration * 50)
+            }
+        }
+    };
+    eval("google.doodle.mod = (function(a,n){return a" + "%%".charAt(0) + "n;})");
+    googleGuitar.prototype.xa = function () {
+        for (var a = [], b = 0; b < this.u.length; ++b) a = a.concat(this.u[b].xa());
+        for (window.bits = a; google.doodle.mod(a.length, 8) != 0;) a.push(false);
+        return a
+    };
+    googleGuitar.prototype.eb = function () {
+        if (this.u.length == 0) return null;
+        var a = "#",
+            b = Va(window.location.toString()).hl;
+        b && (a += "hl=" + b + "&");
+        a += "tune=";
+        for (var c = this.xa(), b = [], d = 0; d < c.length; d += 8) {
+            for (var e = 0, f = 0; f < 8; ++f) e *= 2, e |= c[d + f] ? 1 : 0;
+            b.push(e)
+        }
+        Na();
+        c = V;
+        d = [];
+        for (e = 0; e < b.length; e += 3) {
+            var i = b[e],
+                n = (f = e + 1 < b.length) ? b[e + 1] : 0,
+                k = e + 2 < b.length,
+                l = k ? b[e + 2] : 0,
+                q = i >> 2,
+                i = (i & 3) * 16 | n >> 4,
+                n = (n & 15) * 4 | l >> 6;
+            l &= 63;
+            k || (l = 64, f || (n = 64));
+            d.push(c[q], c[i], c[n], c[l])
+        }
+        return a + d.join("")
+    };
+
+    var Va = function (a) {
+        if (!a) return {};
+        for (var a = a.match(/\?[^#]*/), a = (a && a.length > 0 ? a[0].substr(1) : "").split("&"), b = {}, c = 0; c < a.length; ++c) {
+            var d = a[c];
+            d && (d = d.split("="), b[d[0]] = d[1] || "")
+        }
+        console.log(b);
+        return b
+    },
+        Ia = function () {
+            var a = Va(window.location.href),
+                b = parseInt(a.bpm, 10),
+                a = a.tune;
+            b && a && Ma(b, unescape(a));
+            if (a) {
+                Na();
+                for (var c = W, b = [], d = 0; d < a.length;) {
+                    var e = c[a.charAt(d++)],
+                        f = d < a.length ? c[a.charAt(d)] : 0;
+                    ++d;
+                    var i = d < a.length ? c[a.charAt(d)] : 0;
+                    ++d;
+                    var n = d < a.length ? c[a.charAt(d)] : 0;
+                    ++d;
+                    if (e == null || f == null || i == null || n == null) throw Error();
+                    b.push(e * 4 | f >> 4);
+                    i != 64 && (b.push(f * 16 & 240 | i >> 2), n != 64 && b.push(i * 64 & 192 | n))
+                }
+                a = [];
+                for (c = 0; c < b.length; ++c) {
+                    d = b[c];
+                    for (e = 0; e < 8; ++e) a.push(!!(d & 128)), d *= 2
+                }
+                if (a) {
+                    var k;
+                    a: {
+                        b = [];
+                        c = 0;
+                        try {
+                            for (; a.length - c >= 8;) {
+                                var l = Qa(a, c);
+                                if (l) b.push(l.s), c += l.n;
+                                else {
+                                    k = null;
+                                    break a
+                                }
+                            }
+                        } catch (q) {
+                            k = null;
+                            break a
+                        }
+                        k = new googleGuitar(b)
+                    }
+                    k && (A = k, F(5), k.play())
+                }
+            }
+        },
+        Wa = true,
+        Xa = function () {
+            if (google.rein && google.dstr && !google.doodle.jb) {
+                google.doodle.jb = true;
+                google.rein.push(Xa);
+                google.dstr.push($);
+            }
+
+            if (document.getElementById("hplogo")) {
+                $();
+                google.psy && google.psy.q && google.msg && google.msg.listen(22, function () {
+                    $();
+                    return true
+                });
+                p = document.getElementById("hplogo-g");
+                v = document.createElement("canvas");
+                v.getContext ? (v.width = 0, v.height = 0, v.hideFocus = true, ca = v.getContext("2d"), p.appendChild(v)) : v = null;
+                onWindowResize();
+                o = new Ca(ca, p);
+                var a;
+                r = false;
+                Ja();
+                if (!aa || !Ka()) a = false;
+                else {
+                    
+                }
+                var b = document.getElementById("hplogot");
+                b && (sa = typeof b.style.opacity != "undefined");
+                initBindFunctions();
+                m = true;
+                Ya();
+                !a && Wa && Ia();
+                Wa = false;
+                if (isIE) try {
+                    document.execCommand("BackgroundImageCache", false, true)
+                } catch (c) { }
+            }
+        },
+        Ya = function () {
+            o && (o.kb(), da = window.setTimeout(Ya, 30));
+            var a = document.getElementById("hplogo-led");
+            if (a && G) a.style.backgroundPosition = -540 - 23 * Math.abs(Math.round(5 * Math.sin(G * Math.PI / 12))) + "px -139px", G++
+        },
+        K = function () {
+            var a = document.getElementById("hplogo-led");
+            if (a) a.style.backgroundPosition = "1000px 1000px"
+        },
+        $ = function () {
+            try {
+                window.clearTimeout(da);
+                O();
+                Fa();
+                ja();
+                o && (o.ya(), o = null);
+                t && (removeDom(t), t = null, r = false);
+                v && (removeDom(v), v = null);
+                A && A.stop();
+                B = A = null;
+                F(0);
+                var a = document.getElementById("hplogo-lcd-text");
+                if (a) a.value = "";
+                var b = document.getElementById("hplogo-lcd-screen");
+                if (b) b.style.backgroundPosition = "1000px 1000px";
+                K();
+                google.msg && window.setTimeout(function () {
+                    google.msg.unlisten(22, $)
+                }, 0)
+            } catch (c) { }
+        };
+    Xa()
+})();</script>
+</body> 
+</html> 

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>简朴的风</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/gov.css">
+    <link rel="icon" href="data:image/ico;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=">
+<style type="text/css">
+
+body{background-color:black;color:white;}
+.container {max-width: 700px;margin: 0 auto;}
+.accordion {background-color: #eee;color: #444;
+cursor: pointer;padding: 18px;width: 100%;border: none;
+text-align: left;outline: none;font-size: 15px;transition: 0.4s;}
+.active, .accordion:hover {background-color: #ccc;}
+.panel {padding: 0 18px;background-color: white;max-height: 0;overflow: hidden;transition: max-height 0.2s ease-out;}
+.a1 h4{text-decoration: underline;text-decoration-skip: auto;display: block;}
+.a1 span{color:#cecece;font-size:13px;text-decoration: none !important;display: inline;}
+.a2{background-color:gray;list-style-type:none;width:900px;}
+.a2 code{background-color:black;}
+.a3 a:link{color:red;}
+.a3 a:visited{color:blue;}
+.a3 a:hover{color:green;}
+.a3 a:active{color:cyan;}
+</style>
+</head>
+<body lang="zh-CN">
+	    <div style="font-size:32px;background-color:black;text-align:center;">简朴的风&ensp;
+        <small id="display" style="font-size:12px;">time</small>
+        <select style="background-color:#1f1f1f;border:none;border-left:1px solid cyan;width:24px;">
+            <option>时辰&ensp;时间</option>
+            <option>子时&ensp;23-01&ensp;子初&ensp;23-00&ensp;子正&ensp;0-01</option>
+            <option>丑时&ensp;01-03&ensp;丑初&ensp;01-02&ensp;丑正&ensp;02-03</option>
+            <option>寅时&ensp;03-05&ensp;寅初&ensp;03-04&ensp;寅正&ensp;04-05</option>
+            <option>卯时&ensp;05-07&ensp;卯初&ensp;05-06&ensp;卯正&ensp;06-07</option>
+            <option>辰时&ensp;07-09&ensp;辰初&ensp;07-08&ensp;辰正&ensp;08-09</option>
+            <option>巳时&ensp;09-11&ensp;巳初&ensp;09-10&ensp;巳正&ensp;10-11</option>
+            <option>午时&ensp;11-13&ensp;午初&ensp;11-12&ensp;午正&ensp;12-13</option>
+            <option>未时&ensp;13-15&ensp;未初&ensp;13-14&ensp;未正&ensp;14-15</option>
+            <option>申时&ensp;15-17&ensp;申初&ensp;15-16&ensp;申正&ensp;16-17</option>
+            <option>酉时&ensp;17-19&ensp;酉初&ensp;17-18&ensp;酉正&ensp;18-19</option>
+            <option>戌时&ensp;19-21&ensp;戌初&ensp;19-20&ensp;戌正&ensp;20-21</option>
+            <option>亥时&ensp;21-23&ensp;亥初&ensp;21-22&ensp;亥正&ensp;22-23</option>
+        </select>
+    </div>
+  <div class="container">
+  <button class="accordion">国服</button>
+  <div class="panel">
+<ul class="local-box left" style="list-style-type:none;height:300px;">
+    <li id="beijing"><a href="http://www.beijing.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>北京</a></li>
+    <li id="tianjin"><a href="https://www.tj.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>天津</a></li>
+    <li id="hebei"><a href="http://www.hebei.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>河北</a></li>
+    <li id="shanxi"><a href="http://www.shanxi.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>山西</a></li>
+    <li id="neimenggu"><a href="https://www.nmg.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>内蒙古</a></li>
+    <li id="liaoning"><a href="http://www.ln.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>辽宁</a></li>
+    <li id="jilin"><a href="http://www.jl.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>吉林</a></li>
+    <li id="heilongjiang"><a href="https://www.hlj.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>黑龙江</a></li>
+    <li id="shanghai"><a href="https://www.shanghai.gov.cn/.htm" target="_blank" rel="noopener noreferrer"><i></i>上海</a></li>
+    <li id="jiangsu"><a href="http://www.jiangsu.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>江苏</a></li>
+    <li id="zhejiang"><a href="https://www.zj.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>浙江</a></li>
+    <li id="anhui"><a href="https://www.ah.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>安徽</a></li>
+    <li id="fujian"><a href="http://www.fujian.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>福建</a></li>
+    <li id="jiangxi"><a href="http://www.jiangxi.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>江西</a></li>
+    <li id="shandong"><a href="http://www.shandong.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>山东</a></li>
+    <li id="henan"><a href="https://www.henan.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>河南</a></li>
+    <li id="hubei"><a href="http://www.hubei.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>湖北</a></li>
+    <li id="hunan"><a href="http://www.hunan.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>湖南</a></li>
+    <li id="guangdong"><a href="http://www.gd.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>广东</a></li>
+    <li id="guangxi"><a href="http://www.gxzf.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>广西</a></li>
+    <li id="hainan"><a href="https://www.hainan.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>海南</a></li>
+    <li id="chongqing"><a href="http://www.cq.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>重庆</a></li>
+    <li id="sichuan"><a href="https://www.sc.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>四川</a></li>
+    <li id="guizhou"><a href="http://www.guizhou.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>贵州</a></li>
+    <li id="yunnan"><a href="https://www.yn.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>云南</a></li>
+    <li id="xizang"><a href="http://www.xizang.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>西藏</a></li>
+    <li id="shan"><a href="http://www.shaanxi.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>陕西</a></li>
+    <li id="gansu"><a href="http://www.gansu.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>甘肃</a></li>
+    <li id="qinghai"><a href="http://www.qinghai.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>青海</a></li>
+    <li id="ningxia"><a href="https://www.nx.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>宁夏</a></li>
+    <li id="xinjiang"><a href="http://www.xinjiang.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>新疆</a></li>
+    <li id="bingtuan"><a href="http://www.xjbt.gov.cn/" target="_blank" rel="noopener noreferrer"><i></i>兵团</a></li>
+</ul></div>
+  <button class="accordion">国际服</button>
+  <div class="panel"><iframe name="top_frame" src="gov/index.html" style="width:460px;height:640px"></iframe>
+<div><a href="gov/">各国。。。</a></div></div>
+</div><br />
+<div class="a1">
+<h3>能量不足，心情不佳，请疯狂做这件事！！！</h3>
+<h4>1·晒太阳<span>晒太阳有助于提升心情，促进身心放松，让你感觉更加愉悦和精神焕发。日光照射到皮肤上会激活身体内部的生物钟，调节褪黑激素的分泌，从而提高睡眠质量和精神状态。</span></h4>
+<h4>2·听正能量音乐<span>音乐会激发大脑中的愉悦神经元，释放多巴胺，这种化学反应让你感觉兴奋和愉快。正能量音乐能唤起内心的积极情绪，增强心理韧性和精神能量。</span></h4>
+<h4>3·运动<span>运动释放的内啡肽和多巴胺能够带来身心愉悦感，提升自信心和自我满足感。增强自我意识和自尊心，从而增加精神上的能量和活力。</span></h4>
+<h4>4·吃健康的食物<span>摄入富含维生素和矿物质的健康食物可以促进大脑功能和神经传导，提高心理活力和思维敏捷度。健康饮食还能维持血糖水平稳定，减少能量波动和疲劳感，让你精神饱满，活力充沛。</span></h4>
+<h4>5·喝足够的水<span>身体水分充足可以保持刀恼和神经系统的正常运作，提高注意力和专注力，使你更加身心健康和精神能量的提升。帮助清除身体中的代谢废物，保持血液循环畅通，促进身心健康和精神能量的提升。</span></h4>
+<h4>6·多睡觉<span>充足的睡眠可以让大脑充分休息和恢复，促进记忆力和学习能力，提高思维清晰度和创造力，增强精神活力和动力。深度睡眠阶段是身体进行修复和再生的重要时期，充足的睡眠能够是你在醒来时感觉精力充沛，状态良好。</span></h4>
+<h4>7·冥想<span>冥想有助于减轻焦虑和压力，平复情绪波动，增强内心平静和稳定，提高自我意思和情绪调节能力，从而增强精神和内在动力。</span></h4>
+<h4>8·写日记<span>写日记可以帮助释放内心的负面情绪和压力，增强情感管理能力，让你感觉更加轻松和愉悦，提升心理健康和精神能量。记录生活中的美好时刻和感悟，让你更加感恩和乐观，培养积极的心态和精神力量。</span></h4>
+<h4>9·与正能量的人交往<span>与乐观，积极的人交往可以传递正能量和希望，增强自信心和精神力量。建立良好的社交关系可以减轻孤独感和抑郁情绪。</span></h4>
+<h4>10·换个环境<span>切换不同的环境能够激发新的思维和创意，打破常规思维模式，增强创造力和精神活力。探索新的地方和体验可以让你感受到新鲜的刺激和兴奋，激发内在的热情和精神动力，提升生活质量和精神能量。</span></h4>
+<h3>大彻大悟，骨灰级诗词。</h3>
+<h4>世路如今已惯，此心到处悠然。<span>宋·张孝祥《西江月》</span></h4>
+<h4>有道难行不如醉，有口难言不如睡。<span>宋·苏轼《醉睡者》</span></h4>
+<h4>胸中有丘壑，乐处是生涯。<span>宋代·张元干《送···闻》</span></h4>
+<h4>枕上有书尊有酒，身外事，更难求。<span>金·元好问《江城子》</span></h4>
+<h4>是非入耳君须忍，半做痴呆半做聋。<span>明·唐寅《警世》</span></h4>
+<h4>荣华总是三更梦，富贵还同九月霜。<span>明·佚名《济公全传》<span></h4>
+<h3>语言的艺术，骂人不带脏字。</h3>
+<h4>何不以溺自照面。<span>--程颐《大全集拾遗》【译文】你怎么不撒泡尿照照自己，看是什么德行。</span></h4>
+<h4>老而不死是为贼。<span>--孔子《论语·宪问》【译文】为老不尊，活到这么老还没有死，给别人做坏榜样，真是个害人贼啊。</span></h4>
+<h4>竖子不足与谋。<span>--司马迁《史记·项羽本纪》【译文】不值得和这个人共谋大业。</span></h4>
+<h4>十四万人齐解甲，更无一个是男儿！<span>--花蕊夫人《述国亡诗》【译文】”十四万“没有一个死国的至士，没有一星半点丈夫气概。</span></h4>
+<h4>蚍蜉撼大树，可笑不自量！<span>--韩愈《调张籍》【译文】像那蚂蚁企图去撼动大树，真是不自量力，可笑至极。</span></h4>
+<h4>尔何知！中寿，尔墓之木拱也。<span>--左丘明《左传》【译文】你个没见识的老家伙，你活得太久了。</span></h4>
+</div>
+<div>在线：<a href="assets/">有趣工具</a>&emsp;&frasl;&emsp;在线<a href"../nbt/">NBT修改</a></div>
+<ul class="a2">
+    <li>Windows-CMD命令行</li>
+    <li>校验文件，查看文件摘要，用法：命令 -参数 文件 校验算法&ensp;<code>示例：certutil -hashfile file.txt md5</code></li>
+    <em>哈希算法: MD2 MD4 MD5 SHA1 SHA256 SHA384 SHA512</em><br />
+    <li>转换文件为base64，将文件编码为base64，用法：命令 -参数 输入文件 输出文件&ensp;<code>示例：certutil -encode 1.txt 2.txt</code></li>
+    <li>装换base64文件，将base64文件解码，用法：命令 -参数 输入文件 输出文件&ensp;<code>示例：certutil -decode 2.txt 3.txt</code></li>
+    <li>查看网卡信息，用法：命令&ensp;<code>示例：ipconfig</code></li>
+    <li>查看端口占用，用法：命令 -参数&ensp;<code>示例：netstat -a</code></li>
+    <small><a href="data:text/html, <html contenteditable>" target="_blank" rel="noopener noreferrer">临时记事本编辑</a>跳转后刷新即可</small>
+    <small><a href="data:text/html,<title>标题</title><h1>主题文字</h1>" target="_blank" rel="noopener noreferrer">显示效果</a>点击链接跳转后按F5刷新即可显示</small>
+    <h5>本站<a href="http://xn-efv.cn:8080/plugin.php?id=viewui_tools">工具箱</a></h5>
+</ul>
+<p>Welocome!</p><br />
+<!--https://www.gov.cn/home/2023-03/29/content_5748954.htm-->
+<!--https://www.cac.gov.cn/wxzw/dfwx/A093710index_1.htm-->
+<div>备案信息：<a href="http://beian.miit.gov.cn/">粤ICP备2024248881号</a></div>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;for (i = 0; i < acc.length; i++) {
+acc[i].addEventListener("click", function() {
+this.classList.toggle("active");var panel = this.nextElementSibling;
+if (panel.style.maxHeight) {panel.style.maxHeight = null;}
+else{panel.style.maxHeight = panel.scrollHeight + "px";}});}
+
+var aLoopTexts = ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"];
+function updateDisplay() {var now = new Date();
+var hours = now.getHours();var minutes = now.getMinutes();
+var part = Math.floor(((hours + minutes / 60) + 24 - 23) / 2) % 12;
+var displayText = aLoopTexts[part];
+var timeSinceStart = (hours * 60 + minutes) % 180; // 180分钟 = 90分钟 * 2
+if (timeSinceStart < 90) {displayText += "初";} else {displayText += "正";}
+document.getElementById('display').textContent = displayText;}
+updateDisplay();setInterval(updateDisplay, 60000);
+    </script>
+</body>
+</html>
+
+</script>
+</body>
+</html>

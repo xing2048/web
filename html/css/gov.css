@@ -1,0 +1,247 @@
+/* 频道-政务公开 稿件带日期 */
+.gov-section .news-normal h5 {
+    width: 80%;
+}
+
+#more {
+    width: 1200px;
+}
+
+#more .news-normal {
+    width: 1230px;
+}
+
+#more .news-normal li {
+    float: left;
+    width: 570px;
+    margin-right: 45px;
+}
+
+#local {
+    width: 1200px;
+    margin-top: 10px;
+}
+
+#local .news-normal-title {
+    margin-bottom: 20px;
+}
+
+.local-box {
+    width: 600px;
+}
+
+.local-box li {
+    float: left;
+    width: 65px;
+    height: 65px;
+    margin: 0 10px 10px 0;
+    background: #f9f9f9;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.local-box li:hover {
+    background: #d8ebfa;
+}
+
+.local-box li a {
+    color: #666;
+}
+
+.local-box li i {
+    display: block;
+    width: 65px;
+    height: 40px;
+    background: url(../images/icon02.png) no-repeat;
+}
+
+#beijing i {
+    background-position: -30px -95px;
+}
+
+#tianjin i {
+    background-position: -105px -95px;
+}
+
+#hebei i {
+    background-position: -182px -95px;
+}
+
+#shanxi i {
+    background-position: -255px -95px;
+}
+
+#neimenggu i {
+    background-position: -330px -95px;
+}
+
+#liaoning i {
+    background-position: -407px -95px;
+}
+
+#jilin i {
+    background-position: -482px -95px;
+}
+
+#heilongjiang i {
+    background-position: -557px -95px;
+}
+
+#shanghai i {
+    background-position: -30px -170px;
+}
+
+#jiangsu i {
+    background-position: -105px -170px;
+}
+
+#zhejiang i {
+    background-position: -182px -170px;
+}
+
+#anhui i {
+    background-position: -256px -170px;
+}
+
+#fujian i {
+    background-position: -330px -170px;
+}
+
+#jiangxi i {
+    background-position: -405px -170px;
+}
+
+#shandong i {
+    background-position: -480px -170px;
+}
+
+#henan i {
+    background-position: -555px -170px;
+}
+
+#hubei i {
+    background-position: -32px -245px;
+}
+
+#hunan i {
+    background-position: -106px -245px;
+}
+
+#guangdong i {
+    background-position: -182px -245px;
+}
+
+#guangxi i {
+    background-position: -256px -245px;
+}
+
+#hainan i {
+    background-position: -330px -245px;
+}
+
+#chongqing i {
+    background-position: -405px -245px;
+}
+
+#sichuan i {
+    background-position: -480px -245px;
+}
+
+#guizhou i {
+    background-position: -553px -245px;
+}
+
+#yunnan i {
+    background-position: -32px -320px;
+}
+
+#xizang i {
+    background-position: -105px -320px;
+}
+
+#shan i {
+    background-position: -182px -320px;
+}
+
+#gansu i {
+    background-position: -256px -320px;
+}
+
+#qinghai i {
+    background-position: -330px -320px;
+}
+
+#ningxia i {
+    background-position: -405px -320px;
+}
+
+#xinjiang i {
+    background-position: -480px -320px;
+}
+
+#bingtuan i {
+    background-position: -555px -320px;
+}
+
+/* 频道-政务公开-办公室 页面样式 */
+.office-leader .leader-content {
+    width: 1200px;
+    margin: 75px 0;
+    text-align: center;
+}
+
+.office-leader .leader-content h5 {
+    width: 100px;
+    height: 36px;
+    margin: 0 auto 30px;
+    border-bottom: 2px solid #c50707;
+    color: #c50707;
+    font-size: 30px;
+}
+
+.office-leader .leader-content ul {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.office-leader .leader-content ul#onePerson {
+    width: 240px;
+}
+
+.office-leader .leader-content ul#twoPerson {
+    width: 480px;
+}
+
+.office-leader .leader-content ul#threePerson {
+    width: 720px;
+}
+
+.office-leader .leader-content ul#fourPerson {
+    width: 960px;
+}
+
+.office-leader .leader-content ul li {
+    float: left;
+    width: 180px;
+    height: 360px;
+    margin: 0 30px;
+    overflow: hidden;
+}
+
+.office-leader .leader-content ul li a img {
+    width: 180px;
+    height: 225px;
+}
+
+.office-leader .leader-name {
+    margin-top: 20px;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+}
+

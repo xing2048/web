@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>法定节假日</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="./css/weui.min.css">
+<link rel="stylesheet" type="text/css" href="./css/jquery-weui.min.css">
+<style>
+.holiday-head{
+  background-image: url("./img/holiday/img_holidays_top.png");
+  padding-top: 1.5rem;
+  padding-bottom: 0.9rem;
+}
+.holiday-head .hh-title{
+  text-align: center;
+  font-size:1.1rem;
+  color: rgba(132, 99, 54, 1);
+  font-weight:lighter ;
+}
+.holiday-head .hh-desc{
+  margin:0.7rem 1.7rem 0 1.7rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 0.8rem;
+  border-radius:0.2rem;
+  font-size:0.6rem;
+  color: rgba(132, 99, 54, 1);
+  font-weight:normal ;
+}
+.holiday-head .hh-title b{
+  font-size:1.3rem;
+  color:#cc4d3c;
+}
+
+.holiday-head .hh-desc h3{
+  color: rgba(132, 99, 54, 1);
+  font-weight:normal ;
+}
+
+.holiday-head .hh-desc h3 b{
+  color: rgba(132, 99, 54, 1);
+  font-weight:normal ;
+}
+
+.holiday-body{
+  background: #ffffff;
+  margin-bottom: 0.4rem;
+}
+.holiday-body .hb-title{
+  padding-left: 0.5rem;
+  height: 2.0rem;
+  line-height: 2.0rem;
+  font-size: 0.7rem;
+  font-weight: normal;
+}
+.holiday-body .hb-item{
+  padding:0.6rem;
+  display: flex;
+  align-items:center;
+  border-top:1px solid #e9eef2;
+}
+.holiday-body .hb-item .day{
+  border:1px solid #cc4d3c;
+  font-size:0.6rem;
+  color:#cc4d3c;
+  border-radius:0.2rem;
+  text-align: center;
+  height: 1.8rem;
+  width: 2.6rem;
+  padding: 0.3rem;
+  margin-right:0.5rem;
+}
+.holiday-body .hb-item .content{
+  flex:1;
+}
+.holiday-body .content h2{
+  font-size:0.7rem;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  font-weight: normal;
+}
+
+.holiday-body .content h3{
+  font-size:0.7rem;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  font-weight: normal;
+  color:#666666;
+}
+.holiday-body .content h3 b{
+  color:#000000;
+  font-weight: normal;
+}
+.holiday-body .content h2 b{
+  font-size:0.7rem;
+  margin-right: 0.5rem;
+  display: block;
+  float: left;
+}
+.holiday-body .content h2 div{
+  float: left;
+}
+.holiday-body .content h2 em{
+  font-style:normal;
+  color:#cc4d3c;
+  display: block;
+  float: right;
+}
+.holiday-body .content h2:after{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+}
+</style>
+</head>
+<body>
+<div class="holiday-head">
+  <div class="hh-title">暂无节假日</div>
+  <div class="hh-desc">
+    <h3><b>时间：</b>无</h3>
+    <h3><b>休假：</b>无</h3>
+    <h3><b>补班：</b>无</h3>
+  </div>
+</div>
+<div class="holiday-body">
+  <div id="ty" class="hb-title">今年节假日</div>
+</div>
+
+<script id ="tpl" type="text/template">
+  <% _.each(obj, function(v,k){ %>
+  <div class="hb-item">
+    <div class="day">
+      <div><%= pg.dayDesc(v.time) %></div>
+      <div><%= pg.weekDesc(v.time) %></div>
+    </div>
+    <div class="content">
+      <h2><b><%= v.name %></b><div><%= v.nongli %></div><em><%= pg.diff(v.time) %>天后</em></h2>
+      <h3><b>休假：</b><%= v.xjdesc %><b>（共<%= v.days %>天）</b></h3>
+      <h3><b>补班：</b><%= v.bbdesc %></h3>
+    </div>
+  </div>
+  <% }) %>
+</script>
+<script id ="headTpl" type="text/template">
+  <div class="hh-title">距离<b><%= obj.name %></b>还有<b><%= pg.diff(obj.time) %></b>天</div>
+  <div class="hh-desc">
+    <h3><b>时间：</b><%= pg.dayDesc(obj.time) %>（<%= pg.weekDesc(obj.time) %>）</h3>
+    <h3><b>休假：</b><%= obj.xjdesc %> 共<%= obj.days %>天 </h3>
+    <h3><b>补班：</b><%= obj.bbdesc %></h3>
+  </div>
+</script>
+
+<script id ="headNow" type="text/template">
+  <div class="hh-title">当前<b><%= obj.name %></b>第<b><%= obj.curtime %></b>天</div>
+  <div class="hh-desc">
+    <h3><b>时间：</b><%= pg.dayDesc(obj.time) %>（<%= pg.weekDesc(obj.time) %>）</h3>
+    <h3><b>休假：</b><%= obj.xjdesc %> 共<%= obj.days %>天 </h3>
+    <h3><b>补班：</b><%= obj.bbdesc %></h3>
+  </div>
+</script>
+<script src="./js/underscore-min.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/dayjs.min.js"></script>
+<script type="text/javascript">
+  var pg = {
+    tpl:_.template($('#tpl').html()),
+    tplH:_.template($('#headTpl').html()),
+    tplNow:_.template($('#headNow').html()),
+    weekTxt:['星期日','星期一','星期二','星期三','星期四','星期五','星期六'],
+    dayDesc:function (val) {
+      var day = val.substr(0,10)
+      return dayjs(day).format('M月D日')
+    },
+    weekDesc:function (val) {
+      var day = val.substr(0,10)
+      var i = dayjs(day).format('d')
+      return pg.weekTxt[parseInt(i)]
+    },
+    diff:function(val) {
+      var day = val.substr(0,10)
+      return dayjs(day).diff(dayjs(), 'day')+1
+    },
+    getPage: function () {
+      var ty = dayjs().year()
+      var headData = null
+      var currentData = null
+      $(function(){
+        var res= {"ret":0,"msg":"成功","data":[{"nongli":"农历腊月初十","year":2023,"name":"元旦","xjdesc":"休假3天","days":"3","id":24,"timedesc":"12月31日-1月2日","time":"2023-01-01 00:00:00","bbdesc":"无"},{"nongli":"农历正月初一","year":2023,"name":"春节","xjdesc":"春节","days":"7","id":25,"timedesc":"1月21日-1月27日","time":"2023-01-22 00:00:00","bbdesc":"1月28日(周六)、1月29日(周日)"},{"nongli":"农历闰二月十五","year":2023,"name":"清明节","xjdesc":"清明节","days":"1","id":26,"timedesc":"4月5日","time":"2023-04-05 00:00:00","bbdesc":""},{"nongli":"农历三月十二","year":2023,"name":"劳动节","xjdesc":"劳动节","days":"5","id":27,"timedesc":"4月29日-5月3日","time":"2023-05-01 00:00:00","bbdesc":"4月23日(周日)、5月6日(周六)"},{"nongli":"农历五月初五","year":2023,"name":"端午节","xjdesc":"端午节","days":"3","id":28,"timedesc":"6月22日-6月24日","time":"2023-06-22 00:00:00","bbdesc":"6月25日(周日)"},{"nongli":"农历八月十五","year":2023,"name":"中秋节","xjdesc":"中秋节","days":"8","id":30,"timedesc":"9月29日-10月6日","time":"2023-09-29 00:00:00","bbdesc":"无"},{"nongli":"农历八月十七","year":2023,"name":"国庆节","xjdesc":"国庆节","days":"8","id":31,"timedesc":"9月29日-10月6日","time":"2023-10-01 00:00:00","bbdesc":"10月7日(周六)、10月8日(周日)"}]}
+		//var res=obj.parseJSON();
+		if (res.ret == 0 && res.data.length > 0){
+          var findata=$.grep(res.data,function(n,i){
+            var day = n.time.substr(0,10)
+            return dayjs(day).diff(dayjs(), 'day')+1 >0 && (dayjs(day).isAfter(dayjs()))
+          });
+          headData = findata[0]
+          var currentlist= $.grep(res.data,function(n,i){
+            var day = n.time.substr(0,10)
+            var afterday = dayjs(day).diff(dayjs().format('YYYY-MM-DD'), 'day');
+            return  afterday+ Number(n.days)>0 &&Number(afterday)<=0
+          });
+          if(currentlist.length>0){
+            currentData = currentlist[0];
+          }
+          $('#ty').html(ty+'年剩余法定节假日')
+          $('#ty').after(pg.tpl(findata))
+        }
+        var ny = parseInt(ty) + 1
+        $(function(){
+          
+          if(currentData!=null){
+            var day = currentData.time.substr(0,10)
+            var afterday = dayjs(day).diff(dayjs().format('YYYY-MM-DD'), 'day');
+            var nowday=  Math.abs(afterday)+Number(1);
+            currentData.curtime= nowday;
+            $('.holiday-head').html(pg.tplNow(currentData));
+          } else if (headData!=null){
+            $('.holiday-head').html(pg.tplH(headData));
+          }
+        })
+      })
+    }
+  }
+
+  $(function () {
+    pg.getPage()
+    FastClick.attach(document.body)
+    var  from = GetQueryString('from');
+    if(from == 'app'){
+       $("#zytgimg").css('display','none');
+    }
+  });
+
+  function GetQueryString(name)
+  {
+    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);//search,查询？后面的参数，并匹配正则
+    if(r!=null)return  unescape(r[2]); return null;
+  }
+
+</script>
+</body>
+</html>

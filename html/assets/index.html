@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>娱乐</title>
+<style>
+body{background-color:black;color:white;}
+ul{background-color:gray;width:360px;}
+ul li{list-style-type:none;}
+ul li a:hover{color:white;}
+</style>
+</head>
+<body>
+<h1>HTML取色器</h1>
+    <label for="colorPicker">选择颜色:</label>
+    <input type="color" id="colorPicker" name="colorPicker">
+    <p>你选择的颜色是: <span id="colorValue">#000000</span></p>
+    <p>RGB值: <span id="colorRGBValue">(0, 0, 0)</span></p>
+    <p>HEX6值: <span id="colorHEX6Value">#000000</span></p>
+    <p>HEX8值: <span id="colorHEX8Value">#000000FF</span></p>
+
+    <script>
+        const colorPicker = document.getElementById('colorPicker');
+        const colorValue = document.getElementById('colorValue');
+        const colorRGBValue = document.getElementById('colorRGBValue');
+        const colorHEX6Value = document.getElementById('colorHEX6Value');
+        const colorHEX8Value = document.getElementById('colorHEX8Value');
+
+        colorPicker.addEventListener('input', function() {
+            const color = colorPicker.value;
+            colorValue.textContent = color;
+            colorHEX6Value.textContent = color;
+            // 由于colorPicker返回的值已经是HEX8值，所以不需要添加额外的alpha值
+            colorHEX8Value.textContent = color;
+            
+            // 更新背景颜色
+            document.body.style.backgroundColor = color;
+
+            // 将HEX8值转换为RGB值
+            const rgb = hex8ToRgb(color);
+            colorRGBValue.textContent = `(${rgb.r},${rgb.g}, ${rgb.b})`;
+        });
+
+        function hex8ToRgb(hex8) {
+            // 去除可能存在的"#"符号
+            hex8 = hex8.replace('#', '');
+            // 解析RGB值
+            const r = parseInt(hex8.slice(0, 2), 16);
+            const g = parseInt(hex8.slice(2, 4), 16);
+            const b = parseInt(hex8.slice(4, 6), 16);
+            // 返回RGB对象
+            return { r, g, b };
+        }
+    </script>
+<!--
+
+<label for="colorPicker">选择颜色:</label>
+    <input type="color" id="colorPicker" name="colorPicker">
+    <p>你选择的颜色是: <span id="colorValue">#000000</span></p>
+    <script>
+const colorPicker = document.getElementById('colorPicker');const colorValue = document.getElementById('colorValue');
+colorPicker.addEventListener('input', function() {
+colorValue.textContent = colorPicker.value;
+document.body.style.backgroundColor = colorPicker.value;});
+    </script>
+
+-->
+<ul>
+<li>科幻</li>
+<li><a href="3dword.html">ASCII码3d旋转</a></li>
+<li><a href="3d_circle_point.html">HTML5圆点不断衍生动画特效</a></li>
+<li><a href="apple_clock.html">仿苹果手表设计样式</a></li>
+<li><a href="beatuful_flower.html">盛开的花朵</a></li>
+<li><a href="binary_clock.html">HTML5 Canvas模拟二进制时钟</a></li>
+<li><a href="black_matrix.html">黑客帝国代码雨HTML5特效</a></li>
+<li><a href="calendar.html">vue.js数字时钟calendar</a></li>
+<li><a href="colorful_ball.html">HTML5 WebGL七彩粒子流</a></li>
+<li><a href="digital_clock.html">科技感十足的带辐射线动画的时钟</a></li>
+<li><a href="eye.html">眼睛</a></li>
+<li><a href="fastion_ball.html">树镜</a></li>
+<li><a href="fastion_change.html">动画线分形</a></li>
+<li><a href="fastion_special.html">HTML5 WebGL粒子爆炸动画DEMO演示</a></li>
+<li><a href="flower_fall.html">HTML5 3D花瓣飘落效果</a></li>
+<li><a href="gridding_cartoon.html">canvas网络动画</a></li>
+<li><a href="laser_print.html">CANVAS做的激光刻字动效</a></li>
+<li><a href="milky_way.html">HTML5 Canvas银河背景动画</a></li>
+<li><a href="page_clock.html">翻转时钟</a></li>
+<li><a href="sea.html">Three js 水着色器</a></li>
+<li><a href="sea3D.html">逼真的3D海面/海浪</a></li>
+<li><a href="smallstar.html">canvas梦幻星空背景</a></li>
+<li><a href="snow.html">夜晚的雪花</a></li>
+<li><a href="special_shape.html">抽象画布可视化</a></li>
+<li><a href="summer_night.html">HTML5草长莺飞</a></li>
+<li><a href="sun_earth.html">sun_earth太阳和地球</a></li>
+<li><a href="universe.html">HTML5+JS全屏星空特效</a></li>
+</ul>
+<ul>
+<li>日常</li>
+<li><a href="wiki/daoshuri/">倒数日</a></li>
+<li><a href="wiki/ershisijieqi/">二十四节气</a></li>
+<li><a href="wiki/fadingjiejiari/">法定节假日</a></li>
+<li><a href="wiki/jiaotongbiaozhi/">交通标志</a></li>
+<li><a href="wiki/jiehunjinianri/">结婚纪念日</a></li>
+<li><a href="wiki/lishichaodai/">历史朝代</a></li>
+<li><a href="wiki/phone/common.html">手机号</a></li>
+<li><a href="wiki/qichebiaozhidaquan/">汽车标志大全</a></li>
+<li><a href="wiki/shijiegeguoshoudu/">世界各国首都</a></li>
+<li><a href="wiki/shilijiance/">视力检测</a></li>
+</ul>
+<ul>
+<li>游戏</li>
+<li><a href="game/0hh1/">0hh1</a></li>
+<li><a href="game/2048/">2048</a></li>
+<li><a href="game/baohuduixin/">保护堆芯</a></li>
+<li><a href="game/doumao/">斗猫</a></li>
+<li><a href="game/duobixiaoqiu/">躲避小球</a></li>
+<li><a href="game/feijiduobizhangai/">飞机躲避障碍</a></li>
+<li><a href="game/gaitalou/">盖楼</a></li>
+<li><a href="guoqiao/">过桥</a></li>
+<li><a href="game/heibaiqi/">黑白棋</a></li>
+<li><a href="game/jianfengchazhen/">见缝插针</a></li>
+<li><a href="game/konglongkuaipao/">恐龙快跑</a></li>
+<li><a href="game/mofang/">魔方</a></li>
+<li><a href="game/qiejimu/">切积木</a></li>
+<li><a href="game/qinqichenghujisuan/">亲戚称呼计算</a></li>
+<li><a href="game/tanchishe/">贪吃蛇</a></li>
+<li><a href="game/weiqingwa/">喂青蛙</a></li>
+<li><a href="game/xiangsuniao/">像素鸟</a></li>
+<li><a href="game/xuanzhuanliubianxing/">旋转六边形</a></li>
+<li><a href="game/yigedoubunengsi/">一个都不能死</a></li>
+<li><a href="game/zhipaijiyiyouxi/">纸牌记忆游戏</a></li>
+<li><a href="game/zhitouzi/">掷骰子</a></li>
+<li><a href="game/zuiqiangyanli/">最强眼力</a></li>
+</ul>
+<ul>
+<li>其他</li>
+<li><a href="other/dianjita/">电吉他</a></li>
+<li><a href="other/dianzimuyu/">电子木鱼</a></li>
+<li><a href="other/fuhaodaquan/">符号大全</a></li>
+<li><a href="other/guichuzifushengcheng/">鬼畜字符生成</a></li>
+<li><a href="other/hanshuhuitu/">函数绘图</a></li>
+<li><a href="other/jiazigu/">架子鼓</a></li>
+<li><a href="other/jintianchishenme/">今天吃什么</a></li>
+<li><a href="other/logoshengcheng/">logo生成</a></li>
+<li><a href="other/secaiminganduceshi/">色彩敏感度测试</a></li>
+<li><a href="other/suijimimashengchengqi/">随机密码生成器</a></li>
+<li><a href="other/translate/transfan.html">transfan繁体翻译</a></li>
+<li><a href="other/wenbenchayibijiao/">文本差异比较</a></li>
+<li><a href="other/zishutongji/">字数统计</a></li>
+</ul>
+</body>
+</html>

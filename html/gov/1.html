@@ -1,0 +1,36 @@
+<html>
+<head><title>1</title></head>
+<body>
+<form action="/submit-your-form-endpoint" method="post">
+  <label for="countries">选择国家：</label>
+  <select id="countries" name="countries">
+    <option value="china">中国</option>
+    <option value="usa">美国</option>
+    <!-- 其他国家选项 -->
+  </select>
+
+  <label for="cities">选择城市：</label>
+  <select id="cities" name="cities">
+    <!-- 城市选项将根据所选国家动态填充 -->
+  </select>
+
+  <input type="submit" value="提交">
+</form>
+
+<script>
+  document.getElementById('countries').addEventListener('change', function() {
+    var country = this.value;
+    var citiesSelect = document.getElementById('cities');
+    citiesSelect.innerHTML = ''; // 清空城市列表
+
+    if (country === 'china') {
+      citiesSelect.innerHTML = '<option value="beijing">北京</option><option value="shanghai">上海</option>';
+    } else if (country === 'usa') {
+      citiesSelect.innerHTML = '<option value="new_york">纽约</option><option value="los_angeles">洛杉矶</option>';
+    }
+    // 根据所选国家添加其他城市选项
+  });
+</script>
+
+</body>
+</html>

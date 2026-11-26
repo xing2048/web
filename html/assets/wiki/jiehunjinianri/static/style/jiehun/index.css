@@ -1,0 +1,43 @@
+.mod-panel {
+    width: 100%;
+    max-width: 740px;
+    /* min-width: 580px; */
+    margin: 0 auto 30px;
+    _width: 690px;
+}
+.mod-panel .hd{
+    padding-top: 25px;
+    margin-bottom: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.mod-panel .hd h1{
+    font-size: 24px;
+    color:#212121;
+}
+.mod-panel .bd{
+    overflow: hidden;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+.mod-panel .bd .description{
+    margin-bottom: 30px;
+    line-height: 24px;
+}
+.mod-panel .bd .panel table{
+    width: 100%;
+    border: solid 1px #B8DCF5;
+}
+.mod-panel .bd .panel th,
+.mod-panel .bd .panel td{
+    border: solid 1px #B8DCF5;
+    text-align: center;
+    line-height: 32px;
+}
+.mod-panel .bd .panel th{
+    background: #EDF7FF;
+    color: #348BCF;
+}
+.mod-panel .bd .panel tbody tr:nth-child(2n){
+    background-color: #f0f5f8;
+}

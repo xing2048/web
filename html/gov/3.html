@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dynamic Iframe with Select</title>
+<script>
+function changeIframe() {
+    var select = document.getElementById("selectOption");
+    var iframe = document.getElementById("displayFrame");
+    var selectedValue = select.options[select.selectedIndex].value;
+    
+    // 根据选择的值设置iframe的src属性
+    iframe.src = selectedValue + ".html";
+}
+</script>
+</head>
+<body>
+
+<form>
+    <label for="selectOption">选择内容：</label>
+    <select id="selectOption" onchange="changeIframe()">
+        <option value="1">页面1</option>
+        <option value="id/chn.html">页面2</option>
+        <option value="id/afg">页面3</option>
+    </select>
+</form>
+
+<iframe id="displayFrame" style="width: 100%; height: 300px; border: none;"></iframe>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="icon" href="favicon.ico" type="image/x-icon">
+ <title>二维码</title>
+ <style>
+ .result {
+ margin-top: 10px;
+ }
+ </style>
+ <script src="qrcode.min.js"></script>
+</head>
+<body>
+ <h1>生成二维码，另类<a href="./cimbar_js.html">二维码</a></h1>
+ <div>
+ <label  for="inputText">输入内容:</label>
+ <textarea type="text" id="inputText" maxlength="6000" oninput="countCharacters()" style="height:auto;width:auto;"></textarea>
+ <div>点击输入框右下角，拖住可以改变大小</div>
+ </div>
+ <div class="result" id="result"></div>
+ <div>
+ <button onclick="generateQRCode()">生成二维码</button>
+ </div>
+ <div id="qrcode"></div>
+ <canvas id="qrcodeCanvas" style="display:none;"></canvas>
+ <h1>&nbsp;</h1>
+ <h2><a href="libcimbar/web/">cimbar</a></h2>
+ <script>
+ function countCharacters() {
+ const inputText = document.getElementById('inputText').value;
+ let charCount = 0; // 字符总数
+ let numCount = 0; // 数字总数
+ let chineseCount = 0; // 汉字总数
+ for (let i = 0; i < inputText.length; i++) {
+ const char = inputText.charAt(i);charCount++;
+ if (/\d/.test(char)) {numCount++;}
+ else if (/[\u4e00-\u9fa5]/.test(char)) {chineseCount++;}}
+ const resultDiv = document.getElementById('result');
+ resultDiv.innerHTML = `字符总数: ${charCount}, 数字总数: ${numCount}（5596字）, 汉字总数: ${chineseCount}（777字）`;}
+ function generateQRCode() {
+ const qrText = document.getElementById('inputText').value;
+ const qrcodeElement = document.getElementById('qrcode');
+ qrcodeElement.innerHTML = '';
+ QRCode.toCanvas(document.getElementById('qrcodeCanvas'), qrText, { width: 200 }, function (error) {
+ if (error) console.error(error);
+ console.log('成功生成二维码！');
+ const canvas = document.getElementById('qrcodeCanvas');
+ const pngUrl = canvas.toDataURL('image/png');
+ const img = new  Image();
+ img.src = pngUrl;
+ qrcodeElement.appendChild(img);
+ const downloadLink = document.createElement('a');
+ downloadLink.href = pngUrl;
+ downloadLink.download = 'qrcode.png';
+ downloadLink.innerText = '下载二维码';
+ qrcodeElement.appendChild(downloadLink);
+ });}
+ </script>
+</body>
+</html>
